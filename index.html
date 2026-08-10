@@ -4,17 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Virexo TV | متجر الاشتراكات الرقمية</title>
+<title>Virexo TV | متجر الاشتراكات</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   V2 — VIREXO TV
+   الهوية:
+   كحلي + زمردي + تركوازي + ذهبي
+===================================================== */
+
+:root{
+    --navy:#0b172a;
+    --navy2:#12233b;
+    --navy3:#1b304d;
+
+    --emerald:#079669;
+    --emerald2:#12b981;
+
+    --teal:#0ea5a4;
+    --gold:#d4a72c;
+
+    --white:#ffffff;
+    --bg:#f4f7f9;
+    --soft:#f8fafb;
+
+    --text:#172235;
+    --muted:#64748b;
+
+    --border:#e2e8ee;
+
+    --shadow:
+        0 10px 30px rgba(11,23,42,.07);
+
+    --shadow2:
+        0 20px 55px rgba(11,23,42,.13);
+}
+
+
+/* ================= RESET ================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -23,14 +60,14 @@ html{
 
 body{
     font-family:"Cairo",sans-serif;
-    background:#f3f6fb;
-    color:#172033;
-    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
 }
 
 button,
-select,
-input{
+input,
+select{
     font-family:inherit;
 }
 
@@ -38,1198 +75,3076 @@ button{
     cursor:pointer;
 }
 
-/* ===== HEADER ===== */
+a{
+    text-decoration:none;
+}
+
+
+/* ================= HEADER ================= */
 
 .header{
-    height:78px;
-    background:#050505;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 18px;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.25);
+
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+
+    min-height:70px;
+
+    padding:10px 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:11px;
+
+    color:var(--navy);
+
+    font-size:21px;
+    font-weight:900;
 }
 
 .logo-icon{
-    width:46px;
-    height:46px;
+    width:45px;
+    height:45px;
+
+    display:grid;
+    place-items:center;
+
     border-radius:14px;
-    background:linear-gradient(135deg,#00c6ff,#1769ff);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    box-shadow:0 5px 15px rgba(0,126,255,.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy3)
+        );
+
+    color:white;
+
+    box-shadow:
+        0 8px 22px rgba(11,23,42,.18);
 }
 
-.logo-text{
-    font-size:20px;
+.logo-name span{
+    color:var(--emerald);
+}
+
+.logo-sub{
+    display:block;
+
+    color:#8a97a8;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    margin-top:-3px;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.nav-link{
+    border:0;
+
+    background:#edf9f5;
+
+    color:var(--emerald);
+
+    padding:9px 15px;
+
+    border-radius:11px;
+
+    font-size:11px;
     font-weight:800;
 }
 
-.logo-text small{
-    display:block;
-    color:#aaa;
-    font-size:10px;
-    font-weight:500;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.icon-btn{
-    width:42px;
-    height:42px;
-    border:0;
-    border-radius:50%;
-    background:#171717;
+.nav-link.dark{
+    background:var(--navy);
     color:white;
-    font-size:20px;
 }
 
-/* ===== TOP NAV ===== */
 
-.top-nav{
-    background:white;
-    display:flex;
-    gap:10px;
-    padding:12px 18px;
-    overflow-x:auto;
-    border-bottom:1px solid #e7eaf0;
-}
-
-.nav-btn{
-    border:0;
-    background:#edf5ff;
-    color:#1769df;
-    padding:11px 20px;
-    border-radius:14px;
-    font-weight:700;
-    white-space:nowrap;
-}
-
-.nav-btn.active{
-    color:white;
-    background:linear-gradient(135deg,#1976ff,#1262d8);
-}
-
-/* ===== HERO ===== */
+/* ================= HERO COVER ================= */
 
 .hero{
-    margin:0 18px;
-    margin-top:18px;
-    border-radius:28px;
-    padding:30px 20px 26px;
-    text-align:center;
-    color:white;
-    position:relative;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(0,191,255,.35),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(0,255,200,.25),transparent 35%),
-        linear-gradient(145deg,#06234b,#063b6e 55%,#007f92);
-    box-shadow:0 15px 35px rgba(0,69,125,.22);
+    max-width:1250px;
+    margin:auto;
+
+    padding:22px;
 }
 
-.hero:before{
+.hero-cover{
+    position:relative;
+    overflow:hidden;
+
+    min-height:390px;
+
+    border-radius:30px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(18,185,129,.24),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(14,165,164,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            125deg,
+            #081321,
+            #102640 58%,
+            #0c4a48
+        );
+
+    box-shadow:var(--shadow2);
+}
+
+.hero-cover:before{
     content:"";
+
     position:absolute;
+
     inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.15),
+            transparent
+        );
+}
+
+.hero-grid{
+    position:absolute;
+
+    inset:0;
+
+    opacity:.09;
+
     background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+        linear-gradient(
+            rgba(255,255,255,.5) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.5) 1px,
+            transparent 1px
+        );
+
     background-size:35px 35px;
+
+    transform:
+        perspective(500px)
+        rotateX(55deg)
+        scale(1.4);
+
+    transform-origin:center bottom;
 }
 
 .hero-content{
     position:relative;
-    z-index:2;
+    z-index:3;
+
+    max-width:650px;
+
+    padding:58px 55px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    background:
+        rgba(18,185,129,.15);
+
+    border:
+        1px solid rgba(18,185,129,.3);
+
+    color:#62e6b6;
+
+    padding:8px 13px;
+
+    border-radius:50px;
+
+    font-size:10px;
+    font-weight:800;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#25d996;
+
+    box-shadow:
+        0 0 0 5px rgba(37,217,150,.12);
 }
 
 .hero h1{
-    font-size:34px;
-    line-height:1.35;
-    margin-bottom:8px;
-    font-weight:800;
+    margin-top:20px;
+
+    color:white;
+
+    font-size:
+        clamp(34px,5vw,57px);
+
+    line-height:1.25;
+
+    font-weight:900;
 }
 
 .hero h1 span{
-    color:#49a7ff;
+    color:#39d6a0;
 }
 
-.hero p{
-    color:#dbeeff;
+.hero-text{
+    margin-top:15px;
+
+    color:#cbd5e1;
+
     font-size:14px;
+
     line-height:2;
-    max-width:600px;
-    margin:auto;
+
+    max-width:590px;
 }
 
-/* ===== BUTTON ===== */
-
-.primary-btn{
-    border:0;
-    margin-top:22px;
-    width:100%;
-    max-width:500px;
-    height:58px;
-    border-radius:18px;
-    color:white;
-    background:linear-gradient(135deg,#1681ff,#1165df);
-    font-size:16px;
-    font-weight:800;
-    box-shadow:0 9px 20px rgba(0,93,230,.3);
-    transition:.2s;
-}
-
-.primary-btn:active{
-    transform:scale(.97);
-}
-
-/* ===== PLANS ===== */
-
-.section{
-    padding:25px 18px 5px;
-}
-
-.section-title{
-    font-size:23px;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.plans{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.plan{
-    min-width:0;
-    background:white;
-    border-radius:20px;
-    padding:18px 10px;
-    text-align:center;
-    border:1px solid #e5eaf1;
-    box-shadow:0 7px 20px rgba(20,40,70,.07);
-    transition:.2s;
-}
-
-.plan:active{
-    transform:scale(.97);
-}
-
-.plan-icon{
-    width:45px;
-    height:45px;
-    border-radius:14px;
-    margin:0 auto 10px;
+.hero-buttons{
     display:flex;
-    justify-content:center;
-    align-items:center;
+
+    gap:10px;
+
+    margin-top:25px;
+}
+
+.btn{
+    border:0;
+
+    border-radius:13px;
+
+    padding:13px 22px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.22s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-main{
+    background:
+        linear-gradient(
+            135deg,
+            var(--emerald),
+            var(--teal)
+        );
+
     color:white;
-    font-size:21px;
-    background:linear-gradient(135deg,#1883ff,#1264d7);
+
+    box-shadow:
+        0 10px 25px rgba(7,150,105,.3);
 }
 
-.plan h3{
-    font-size:15px;
+.btn-white{
+    background:white;
+
+    color:var(--navy);
+}
+
+
+/* ================= TV COVER ================= */
+
+.tv-showcase{
+    position:absolute;
+
+    left:55px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:390px;
+    height:245px;
+
+    z-index:2;
+}
+
+.tv{
+    position:absolute;
+
+    right:0;
+    top:20px;
+
+    width:325px;
+    height:195px;
+
+    border-radius:24px;
+
+    border:
+        8px solid #263c57;
+
+    background:
+        linear-gradient(
+            145deg,
+            #07101d,
+            #172b44
+        );
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.4);
+
+    display:grid;
+    place-items:center;
+}
+
+.tv-screen{
+    width:100%;
+    height:100%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(18,185,129,.17),
+            transparent 60%
+        );
+}
+
+.tv-logo{
+    color:white;
+
+    font-size:24px;
+
+    font-weight:900;
+}
+
+.tv-logo span{
+    color:#36d99f;
+}
+
+.tv-play{
+    width:60px;
+    height:60px;
+
+    margin-top:15px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--emerald),
+            var(--teal)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(18,185,129,.35);
+}
+
+.tv-stand{
+    position:absolute;
+
+    bottom:0;
+    right:130px;
+
+    width:70px;
+    height:25px;
+
+    background:#263c57;
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* ================= SERVICES MINI CARDS ================= */
+
+.service-strip{
+    position:absolute;
+
+    right:35px;
+    bottom:28px;
+
+    display:flex;
+
+    gap:8px;
+
+    z-index:5;
+}
+
+.service-mini{
+    min-width:100px;
+
+    padding:9px 12px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+
+    text-align:center;
+}
+
+.service-mini strong{
+    display:block;
+
+    font-size:10px;
+}
+
+.service-mini span{
+    display:block;
+
+    color:#9fe9d0;
+
+    font-size:8px;
+
+    margin-top:2px;
+}
+
+
+/* ================= AD BAR ================= */
+
+.ad-wrapper{
+    max-width:1250px;
+    margin:auto;
+
+    padding:
+        0 22px 22px;
+}
+
+.ad-bar{
+    overflow:hidden;
+
+    height:50px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--navy),
+            #17314e,
+            var(--navy)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+        0 8px 22px rgba(11,23,42,.1);
+
+    display:flex;
+    align-items:center;
+}
+
+.ad-label{
+    position:relative;
+    z-index:2;
+
+    flex-shrink:0;
+
+    height:100%;
+
+    padding:0 18px;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--emerald),
+            var(--teal)
+        );
+
+    color:white;
+
+    font-size:10px;
+
+    font-weight:900;
+}
+
+.ad-content{
     white-space:nowrap;
-}
 
-.plan p{
+    display:inline-block;
+
+    padding-right:100%;
+
+    animation:
+        ticker 22s linear infinite;
+
+    color:#e8f8f3;
+
     font-size:11px;
-    color:#14a477;
-    margin-top:3px;
+
+    font-weight:700;
 }
 
-/* ===== FEATURES ===== */
+.ad-content span{
+    margin:0 35px;
+
+    color:#66e1b8;
+}
+
+@keyframes ticker{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(100%);
+    }
+}
+
+
+/* ================= FEATURES ================= */
 
 .features{
-    display:flex;
-    flex-direction:column;
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:
+        0 22px 25px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:14px;
 }
 
 .feature{
     background:white;
-    border:1px solid #e5e9ef;
-    border-radius:23px;
-    padding:20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:17px;
+
     display:flex;
+
     align-items:center;
-    gap:15px;
-    min-height:115px;
-    box-shadow:0 7px 20px rgba(20,40,70,.06);
+
+    gap:12px;
+
+    box-shadow:
+        var(--shadow);
 }
 
 .feature-icon{
-    flex:0 0 58px;
-    height:58px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
+    width:46px;
+    height:46px;
+
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:13px;
+
     color:white;
-    background:#13b886;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy3)
+        );
 }
 
-.feature:nth-child(2) .feature-icon{
-    background:#1976ed;
+.feature-icon.green{
+    background:
+        linear-gradient(
+            135deg,
+            var(--emerald),
+            var(--teal)
+        );
 }
 
-.feature:nth-child(3) .feature-icon{
-    background:#f5a000;
+.feature-icon.gold{
+    background:
+        linear-gradient(
+            135deg,
+            #b48618,
+            #e1bd51
+        );
 }
 
-.feature-text{
-    flex:1;
-    min-width:0;
-}
-
-.feature-text h3{
-    font-size:18px;
-    margin-bottom:4px;
-}
-
-.feature-text p{
-    color:#7b8493;
+.feature h3{
     font-size:12px;
+
+    font-weight:900;
+}
+
+.feature p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* ================= STORE ================= */
+
+.store{
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:
+        35px 22px 75px;
+}
+
+.section-head{
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:22px;
+}
+
+.section-title h2{
+    font-size:28px;
+
+    font-weight:900;
+
+    color:var(--navy);
+}
+
+.section-title h2 span{
+    color:var(--emerald);
+}
+
+.section-title p{
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+.search{
+    width:260px;
+
+    padding:13px 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:13px;
+
+    background:white;
+
+    outline:none;
+
+    font-size:11px;
+
+    transition:.2s;
+}
+
+.search:focus{
+    border-color:
+        rgba(7,150,105,.45);
+
+    box-shadow:
+        0 0 0 4px rgba(7,150,105,.06);
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.product{
+    overflow:hidden;
+
+    position:relative;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow2);
+}
+
+.ribbon{
+    position:absolute;
+
+    top:13px;
+    right:13px;
+
+    z-index:10;
+
+    padding:6px 10px;
+
+    border-radius:8px;
+
+    background:white;
+
+    color:var(--emerald);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.12);
+}
+
+
+/* ================= PRODUCT IMAGE ================= */
+
+.package{
+    position:relative;
+
+    height:190px;
+
+    overflow:hidden;
+
+    display:grid;
+
+    place-items:center;
+}
+
+.package.green{
+    background:
+        linear-gradient(
+            135deg,
+            #07543f,
+            #0da578
+        );
+}
+
+.package.teal{
+    background:
+        linear-gradient(
+            135deg,
+            #075e65,
+            #12a9a7
+        );
+}
+
+.package.navy{
+    background:
+        linear-gradient(
+            135deg,
+            #0b172a,
+            #284767
+        );
+}
+
+.package.gold{
+    background:
+        linear-gradient(
+            135deg,
+            #79601b,
+            #c5a038
+        );
+}
+
+.package:before{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.08);
+
+    top:-120px;
+    left:-70px;
+}
+
+.package:after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.06);
+
+    bottom:-100px;
+    right:-50px;
+}
+
+.package-screen{
+    position:relative;
+    z-index:3;
+
+    width:210px;
+    height:125px;
+
+    border:
+        6px solid rgba(255,255,255,.78);
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #081321,
+            #203752
+        );
+
+    box-shadow:
+        0 22px 40px rgba(0,0,0,.3);
+
+    display:grid;
+
+    place-items:center;
+}
+
+.package-screen-content{
+    text-align:center;
+
+    color:white;
+}
+
+.package-screen-content strong{
+    display:block;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+.package-screen-content span{
+    display:block;
+
+    color:#72e7bf;
+
+    font-size:9px;
+
+    margin-top:3px;
+}
+
+.package-play{
+    margin-top:8px;
+
+    width:29px;
+    height:29px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--emerald),
+            var(--teal)
+        );
+}
+
+
+/* ================= PRODUCT BODY ================= */
+
+.product-body{
+    padding:20px;
+}
+
+.product-title{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.product-title h3{
+    color:var(--navy);
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+.status{
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    background:#eaf9f4;
+
+    color:var(--emerald);
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+.description{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
     line-height:1.8;
 }
 
-/* ===== ORDER BOX ===== */
-
-.order-box{
-    margin:25px 18px;
-    background:white;
-    border-radius:25px;
-    padding:22px;
-    box-shadow:0 10px 30px rgba(20,40,70,.08);
-    border:1px solid #e6eaf0;
-}
-
-.order-box h2{
-    font-size:22px;
-    margin-bottom:6px;
-}
-
-.order-box .sub{
-    color:#7c8592;
-    font-size:13px;
-    margin-bottom:18px;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-group label{
+.select-label{
     display:block;
-    font-weight:700;
-    font-size:13px;
+
+    margin-top:16px;
     margin-bottom:7px;
+
+    color:#475569;
+
+    font-size:10px;
+
+    font-weight:800;
 }
 
-.form-group select,
-.form-group input{
+.plan-select{
     width:100%;
-    height:50px;
-    border:1px solid #dce2ea;
-    border-radius:14px;
-    padding:0 14px;
+
+    padding:13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#f9fbfc;
+
+    color:var(--navy);
+
     outline:none;
-    background:#fafcff;
-    color:#182234;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    cursor:pointer;
 }
 
-.form-group select:focus,
-.form-group input:focus{
-    border-color:#1976ed;
+.plan-select:focus{
+    border-color:
+        rgba(7,150,105,.45);
+
+    box-shadow:
+        0 0 0 4px rgba(7,150,105,.06);
 }
+
+
+/* ================= PRICE ================= */
 
 .price-box{
-    background:#eef7ff;
-    border-radius:16px;
-    padding:14px;
-    margin:10px 0;
-    text-align:center;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin:
+        15px 0;
+
+    padding:
+        13px;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4fbf8,
+            #f8fbfc
+        );
+
+    border:
+        1px solid #dcefe8;
 }
 
-.price-box span{
-    display:block;
-    color:#718096;
-    font-size:12px;
+.price-label{
+    color:var(--muted);
+
+    font-size:10px;
 }
 
 .price{
-    color:#1269df;
-    font-size:24px;
-    font-weight:800;
-}
-
-.whatsapp-btn{
-    width:100%;
-    height:55px;
-    border:0;
-    border-radius:16px;
-    background:#16b97e;
-    color:white;
-    font-weight:800;
-    font-size:15px;
-    margin-top:10px;
-    box-shadow:0 8px 18px rgba(22,185,126,.25);
-}
-
-/* ===== AD ===== */
-
-.ad-box{
-    margin:25px 18px;
-    border-radius:20px;
-    overflow:hidden;
-    background:linear-gradient(135deg,#1265dd,#11b887);
-    color:white;
-    box-shadow:0 10px 25px rgba(0,90,180,.15);
-}
-
-.ad-content{
-    min-height:64px;
-    padding:13px 18px;
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
+
+    align-items:baseline;
+
+    gap:4px;
+
+    color:var(--emerald);
 }
 
-.ad-text{
-    flex:1;
-    min-width:0;
+.price strong{
+    font-size:27px;
+
+    font-weight:900;
 }
 
-.ad-text strong{
-    display:block;
-    font-size:15px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.ad-text span{
-    display:block;
-    font-size:11px;
-    opacity:.9;
-    margin-top:3px;
-}
-
-.ad-button{
-    border:0;
-    background:white;
-    color:#0879bc;
-    padding:10px 15px;
-    border-radius:12px;
-    font-weight:800;
-    white-space:nowrap;
-}
-
-/* ===== HOW TO ===== */
-
-.steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.step{
-    background:white;
-    border-radius:18px;
-    padding:17px 8px;
-    text-align:center;
-    border:1px solid #e7ebf1;
-}
-
-.step-number{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    background:#176ee5;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 8px;
-    font-weight:800;
-}
-
-.step h4{
-    font-size:13px;
-}
-
-.step p{
-    color:#7c8490;
+.price small{
     font-size:10px;
-    margin-top:3px;
+
+    font-weight:800;
 }
 
-/* ===== FOOTER ===== */
 
-.footer{
-    margin-top:35px;
-    background:#07111f;
-    color:white;
-    text-align:center;
-    padding:25px 18px;
+/* ================= LIST ================= */
+
+.product-features{
+    list-style:none;
+
+    margin-bottom:16px;
 }
 
-.footer strong{
-    font-size:19px;
+.product-features li{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#637084;
+
+    font-size:10px;
+
+    margin:7px 0;
 }
 
-.footer p{
-    color:#9ca8b8;
-    font-size:11px;
-    margin-top:6px;
+.check{
+    width:18px;
+    height:18px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#e9f9f3;
+
+    color:var(--emerald);
+
+    font-size:9px;
+
+    font-weight:900;
 }
 
-/* ===== MODAL ===== */
+.product .btn{
+    width:100%;
+}
+
+
+/* ================= MODALS ================= */
 
 .modal{
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.55);
+
+    z-index:3000;
+
     display:none;
-    align-items:flex-end;
+
+    align-items:center;
     justify-content:center;
-    z-index:2000;
-    padding:15px;
+
+    padding:18px;
+
+    background:
+        rgba(7,17,30,.6);
+
+    backdrop-filter:
+        blur(8px);
 }
 
 .modal.show{
     display:flex;
 }
 
-.modal-content{
+.modal-box{
     width:100%;
-    max-width:550px;
+
+    max-width:480px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:23px;
+
     background:white;
-    border-radius:25px 25px 15px 15px;
-    padding:24px;
-    animation:up .25s ease;
+
+    border-radius:23px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.28);
+
+    animation:
+        popup .2s ease;
 }
 
-@keyframes up{
+@keyframes popup{
     from{
-        transform:translateY(100%);
         opacity:0;
+        transform:
+            translateY(20px)
+            scale(.98);
     }
+
     to{
-        transform:translateY(0);
         opacity:1;
+        transform:none;
     }
 }
 
-.modal-header{
+.modal-head{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    margin-bottom:15px;
+
+    margin-bottom:18px;
+}
+
+.modal-head h3{
+    font-size:19px;
+
+    font-weight:900;
 }
 
 .close{
+    width:37px;
+    height:37px;
+
     border:0;
-    background:#f0f2f5;
-    width:38px;
-    height:38px;
+
+    border-radius:10px;
+
+    background:#f1f5f9;
+
+    color:var(--navy);
+
+    font-size:21px;
+}
+
+.selected{
+    padding:14px;
+
+    border-radius:13px;
+
+    background:#effaf6;
+
+    border:
+        1px solid #d4f0e6;
+
+    margin-bottom:15px;
+}
+
+.selected small{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.selected strong{
+    display:block;
+
+    color:var(--emerald);
+
+    font-size:12px;
+
+    margin-top:4px;
+}
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group label{
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#475569;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+
+    padding:13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#fbfcfd;
+
+    color:var(--navy);
+
+    outline:none;
+
+    font-size:11px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:
+        rgba(7,150,105,.45);
+
+    box-shadow:
+        0 0 0 4px rgba(7,150,105,.06);
+}
+
+.modal-note{
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:9px;
+
+    line-height:1.8;
+
+    margin-top:10px;
+}
+
+
+/* ================= INFO ================= */
+
+.steps{
+    display:grid;
+
+    gap:10px;
+}
+
+.step{
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+}
+
+.step-number{
+    width:32px;
+    height:32px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
     border-radius:50%;
-    font-size:20px;
+
+    background:#e8f9f3;
+
+    color:var(--emerald);
+
+    font-size:11px;
+
+    font-weight:900;
 }
 
-.modal-content p{
-    color:#626d7c;
-    line-height:2;
-    font-size:13px;
+.step p{
+    color:#526174;
+
+    font-size:10px;
 }
 
-.whatsapp-example{
-    margin-top:15px;
-    background:#e9f8ee;
-    border-radius:15px;
-    padding:15px;
-    white-space:pre-line;
-    color:#17251c;
-    font-size:13px;
-    line-height:1.9;
-    direction:rtl;
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:
+        linear-gradient(
+            135deg,
+            #091524,
+            #132b47
+        );
+
+    color:#9eacbd;
+
+    padding:
+        32px 20px;
+
+    text-align:center;
+
+    font-size:10px;
 }
 
-/* ===== MOBILE ===== */
+.footer strong{
+    color:white;
 
-@media(max-width:600px){
+    font-size:17px;
+}
 
-    .header{
-        height:70px;
+.footer span{
+    color:#39d6a0;
+}
+
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+
+    z-index:5000;
+
+    left:50%;
+    bottom:22px;
+
+    transform:
+        translateX(-50%)
+        translateY(80px);
+
+    opacity:0;
+
+    padding:
+        12px 18px;
+
+    border-radius:12px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:10px;
+
+    box-shadow:var(--shadow2);
+
+    transition:.25s;
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1050px){
+
+    .tv-showcase{
+        opacity:.16;
+        left:10px;
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:750px){
+
+    .hero{
+        padding:
+            13px;
+    }
+
+    .hero-cover{
+        min-height:450px;
+
+        border-radius:22px;
+    }
+
+    .hero-content{
+        padding:
+            36px 23px;
     }
 
     .hero h1{
-        font-size:28px;
+        font-size:35px;
     }
 
-    .hero{
-        margin-left:12px;
-        margin-right:12px;
-        border-radius:23px;
+    .hero-text{
+        font-size:12px;
     }
 
-    .section{
-        padding-left:12px;
-        padding-right:12px;
+    .hero-buttons{
+        display:grid;
+
+        grid-template-columns:1fr;
     }
 
-    .plans{
-        gap:8px;
+    .tv-showcase{
+        display:none;
     }
 
-    .plan{
-        padding:15px 5px;
+    .service-strip{
+        right:15px;
+        left:15px;
+        bottom:18px;
+
+        justify-content:center;
     }
 
-    .plan h3{
-        font-size:13px;
+    .service-mini{
+        min-width:85px;
     }
 
-    .plan p{
-        font-size:10px;
+    .ad-wrapper{
+        padding:
+            0 13px 17px;
+    }
+
+    .features{
+        padding:
+            0 13px 18px;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .feature{
-        min-height:105px;
-    }
-
-    .steps{
-        gap:7px;
-    }
-}
-
-@media(max-width:380px){
-
-    .logo-text{
-        font-size:17px;
-    }
-
-    .hero h1{
-        font-size:24px;
+        padding:13px;
     }
 
     .feature-icon{
-        flex-basis:52px;
-        height:52px;
+        width:40px;
+        height:40px;
     }
 
-    .feature-text h3{
-        font-size:16px;
+    .store{
+        padding:
+            28px 13px 55px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .search{
+        width:100%;
+
+        margin-top:13px;
+    }
+
+}
+
+
+@media(max-width:560px){
+
+    .nav{
+        min-height:61px;
+
+        padding:
+            8px 13px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo-icon{
+        width:39px;
+        height:39px;
+    }
+
+    .nav-link{
+        padding:
+            8px 11px;
+
+        font-size:9px;
+    }
+
+    .logo-sub{
+        font-size:7px;
+    }
+
+    .hero-cover{
+        min-height:430px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero-text{
+        font-size:11px;
+        line-height:1.9;
+    }
+
+    .service-strip{
+        overflow-x:auto;
+
+        justify-content:flex-start;
+
+        padding-bottom:3px;
+    }
+
+    .service-mini{
+        flex-shrink:0;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:23px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .package{
+        height:185px;
+    }
+
+    .product-body{
+        padding:18px;
+    }
+
+    .product-title h3{
+        font-size:17px;
+    }
+
+    .price strong{
+        font-size:25px;
+    }
+
+}
+
+
+/* ================= LARGE SCREENS ================= */
+
+@media(min-width:1400px){
+
+    .nav,
+    .hero,
+    .ad-wrapper,
+    .features,
+    .store{
+        max-width:1350px;
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(4,1fr);
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
 <header class="header">
 
-    <div class="logo">
-        <div class="logo-icon">▶</div>
+<nav class="nav">
 
-        <div class="logo-text">
-            Virexo TV
-            <small>متجر الاشتراكات الرقمية</small>
-        </div>
-    </div>
+<a href="#" class="logo">
 
-    <div class="header-actions">
-        <button class="icon-btn" onclick="openHow()">☰</button>
-    </div>
+<div class="logo-icon">
+
+<svg width="23" height="23"
+viewBox="0 0 24 24"
+fill="none">
+
+<path
+d="M8 5.5L18 12L8 18.5V5.5Z"
+fill="white"></path>
+
+</svg>
+
+</div>
+
+<div class="logo-name">
+
+Virexo <span>TV</span>
+
+<small class="logo-sub">
+متجر الاشتراكات الرقمية
+</small>
+
+</div>
+
+</a>
+
+
+<div class="nav-actions">
+
+<button
+class="nav-link"
+onclick="scrollToStore()">
+
+الباقات
+
+</button>
+
+<button
+class="nav-link dark"
+onclick="openInfo()">
+
+طريقة الطلب
+
+</button>
+
+</div>
+
+</nav>
 
 </header>
 
 
-<!-- NAV -->
-<nav class="top-nav">
 
-    <button class="nav-btn active" onclick="scrollToSection('order')">
-        طريقة الطلب
-    </button>
+<!-- =====================================================
+HERO COVER
+===================================================== -->
 
-    <button class="nav-btn" onclick="scrollToSection('plans')">
-        الباقات
-    </button>
-
-</nav>
-
-
-<!-- HERO -->
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-cover">
 
-        <h1>
-            ترفيه <span>بلا حدود</span>
-        </h1>
-
-        <p>
-            اختر الباقة المناسبة لك، حدد مدة الاشتراك،
-            وشاهد السعر مباشرة قبل إرسال طلبك.
-        </p>
-
-        <button class="primary-btn" onclick="scrollToSection('plans')">
-            استكشف الباقات
-        </button>
-
-    </div>
-
-</section>
+<div class="hero-grid"></div>
 
 
-<!-- PLANS -->
-<section class="section" id="plans">
+<div class="hero-content">
 
-    <h2 class="section-title">
-        الباقات المتوفرة
-    </h2>
+<div class="hero-badge">
 
-    <div class="plans">
+<span class="live-dot"></span>
 
-        <button class="plan" onclick="choosePlan('PREMIUM')">
-
-            <div class="plan-icon">★</div>
-
-            <h3>PREMIUM</h3>
-
-            <p>متوفر الآن</p>
-
-        </button>
-
-
-        <button class="plan" onclick="choosePlan('LYNXE IPTV')">
-
-            <div class="plan-icon">▶</div>
-
-            <h3>LYNXE IPTV</h3>
-
-            <p>متوفر الآن</p>
-
-        </button>
-
-
-        <button class="plan" onclick="choosePlan('MY HD')">
-
-            <div class="plan-icon">HD</div>
-
-            <h3>MY HD</h3>
-
-            <p>متوفر الآن</p>
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- AD -->
-<div class="ad-box">
-
-    <div class="ad-content">
-
-        <div class="ad-text">
-
-            <strong>
-                🔥 عرض خاص على الاشتراكات
-            </strong>
-
-            <span>
-                اختر باقتك وأرسل الطلب مباشرة
-            </span>
-
-        </div>
-
-        <button class="ad-button" onclick="scrollToSection('order')">
-            اطلب الآن
-        </button>
-
-    </div>
+اشتراكات متوفرة الآن
 
 </div>
 
 
-<!-- FEATURES -->
-<section class="section">
+<h1>
 
-    <div class="features">
+اختار باقتك
+<br>
 
-        <div class="feature">
+وشاهدها
+<span>براحتك</span>
 
-            <div class="feature-icon">✓</div>
-
-            <div class="feature-text">
-
-                <h3>اختيار سهل</h3>
-
-                <p>
-                    اختر الباقة والمدة في مكان واحد بدون تعقيد.
-                </p>
-
-            </div>
-
-        </div>
+</h1>
 
 
-        <div class="feature">
+<p class="hero-text">
 
-            <div class="feature-icon">⚡</div>
+مجموعة من الاشتراكات والمدد المختلفة.
+اختر الخدمة التي تناسبك، حدد مدة الاشتراك،
+وشاهد السعر مباشرة قبل إرسال طلبك.
 
-            <div class="feature-text">
-
-                <h3>طلب سريع</h3>
-
-                <p>
-                    أرسل طلبك مباشرة عبر WhatsApp خلال ثوانٍ.
-                </p>
-
-            </div>
-
-        </div>
+</p>
 
 
-        <div class="feature">
+<div class="hero-buttons">
 
-            <div class="feature-icon">💰</div>
+<button
+class="btn btn-main"
+onclick="scrollToStore()">
 
-            <div class="feature-text">
+استكشف الباقات
 
-                <h3>أسعار واضحة</h3>
-
-                <p>
-                    السعر يظهر أمامك قبل إرسال الطلب.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+</button>
 
 
-<!-- ORDER -->
-<section class="order-box" id="order">
+<button
+class="btn btn-white"
+onclick="openInfo()">
 
-    <h2>اطلب اشتراكك 📺</h2>
+كيف أطلب؟
 
-    <p class="sub">
-        اختر الباقة والمدة، ثم اضغط إرسال عبر WhatsApp.
-    </p>
+</button>
 
+</div>
 
-    <div class="form-group">
-
-        <label>الباقة</label>
-
-        <select id="plan">
-
-            <option value="PREMIUM">PREMIUM</option>
-
-            <option value="LYNXE IPTV">
-                LYNXE IPTV
-            </option>
-
-            <option value="MY HD">
-                MY HD
-            </option>
-
-        </select>
-
-    </div>
+</div>
 
 
-    <div class="form-group">
 
-        <label>مدة الاشتراك</label>
+<!-- TV -->
 
-        <select id="duration" onchange="updatePrice()">
+<div class="tv-showcase">
 
-            <option value="1">شهر واحد</option>
+<div class="tv">
 
-            <option value="3">3 أشهر</option>
+<div class="tv-screen">
 
-            <option value="6">6 أشهر</option>
+<div>
 
-            <option value="12">12 شهر</option>
+<div class="tv-logo">
+Virexo <span>TV</span>
+</div>
 
-        </select>
+<div class="tv-play">
 
-    </div>
+<svg width="21" height="21"
+viewBox="0 0 24 24"
+fill="none">
 
+<path
+d="M9 5L19 12L9 19V5Z"
+fill="white"></path>
 
-    <div class="form-group">
+</svg>
 
-        <label>اسمك</label>
+</div>
 
-        <input
-            type="text"
-            id="customerName"
-            placeholder="اكتب اسمك"
-        >
+</div>
 
-    </div>
+</div>
 
-
-    <div class="price-box">
-
-        <span>السعر الإجمالي</span>
-
-        <div class="price">
-            <span id="price">1000</span> دج
-        </div>
-
-    </div>
+</div>
 
 
-    <button class="whatsapp-btn" onclick="sendWhatsApp()">
-        💬 إرسال الطلب عبر WhatsApp
-    </button>
+<div class="tv-stand"></div>
+
+</div>
+
+
+
+<!-- الخدمات -->
+
+<div class="service-strip">
+
+<div class="service-mini">
+<strong>MY HD</strong>
+<span>متوفر</span>
+</div>
+
+<div class="service-mini">
+<strong>LYNXE IPTV</strong>
+<span>متوفر</span>
+</div>
+
+<div class="service-mini">
+<strong>Premium</strong>
+<span>متوفر</span>
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- HOW TO -->
-<section class="section">
 
-    <h2 class="section-title">
-        كيف تطلب؟
-    </h2>
+<!-- =====================================================
+ADVERTISEMENT
+===================================================== -->
 
-    <div class="steps">
+<div class="ad-wrapper">
 
-        <div class="step">
+<div class="ad-bar">
 
-            <div class="step-number">1</div>
+<div class="ad-label">
 
-            <h4>اختر الباقة</h4>
+📢 عروض اليوم
 
-            <p>
-                حدد الخدمة المناسبة
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="step">
+<div class="ad-content">
 
-            <div class="step-number">2</div>
+اشترك الآن واستفد من الباقة المناسبة لك
 
-            <h4>حدد المدة</h4>
+<span>◆</span>
 
-            <p>
-                اختر مدة الاشتراك
-            </p>
+شهر • 3 أشهر • 6 أشهر • سنة
 
-        </div>
+<span>◆</span>
+
+اختار المدة وشاهد السعر مباشرة
+
+<span>◆</span>
+
+Virexo TV — اشتراكك في مكان واحد
+
+</div>
+
+</div>
+
+</div>
 
 
-        <div class="step">
 
-            <div class="step-number">3</div>
+<!-- =====================================================
+FEATURES
+===================================================== -->
 
-            <h4>أرسل الطلب</h4>
+<section class="features">
 
-            <p>
-                عبر WhatsApp
-            </p>
 
-        </div>
+<div class="feature">
 
-    </div>
+<div class="feature-icon green">
+
+✓
+
+</div>
+
+<div>
+
+<h3>
+اختيار سهل
+</h3>
+
+<p>
+الخدمة والمدة في مكان واحد
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+⚡
+
+</div>
+
+<div>
+
+<h3>
+طلب سريع
+</h3>
+
+<p>
+أرسل طلبك خلال ثوانٍ
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon gold">
+
+◉
+
+</div>
+
+<div>
+
+<h3>
+أسعار واضحة
+</h3>
+
+<p>
+السعر يظهر قبل الطلب
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon green">
+
+✓
+
+</div>
+
+<div>
+
+<h3>
+تواصل مباشر
+</h3>
+
+<p>
+الطلب عبر WhatsApp
+</p>
+
+</div>
+
+</div>
+
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+STORE
+===================================================== -->
+
+<section
+class="store"
+id="store">
+
+
+<div class="section-head">
+
+<div class="section-title">
+
+<h2>
+الباقات <span>المتوفرة</span>
+</h2>
+
+<p>
+اختر الخدمة ثم حدد مدة الاشتراك المناسبة لك
+</p>
+
+</div>
+
+
+<input
+class="search"
+id="searchInput"
+type="search"
+placeholder="🔎 ابحث عن الخدمة..."
+oninput="searchProducts()">
+
+</div>
+
+
+<div
+class="products"
+id="products">
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
 <footer class="footer">
 
-    <strong>Virexo TV</strong>
+<strong>
+Virexo <span>TV</span>
+</strong>
 
-    <p>
-        متجر الاشتراكات الرقمية
-    </p>
+<br><br>
 
-    <p>
-        © 2026 Virexo TV - جميع الحقوق محفوظة
-    </p>
+متجر الاشتراكات الرقمية
+
+<br><br>
+
+WhatsApp:
+0671995831
+
+<br><br>
+
+© <span id="year"></span>
+Virexo TV — جميع الحقوق محفوظة
 
 </footer>
 
 
-<!-- MODAL -->
-<div class="modal" id="howModal">
 
-    <div class="modal-content">
+<!-- =====================================================
+ORDER MODAL
+===================================================== -->
 
-        <div class="modal-header">
+<div
+class="modal"
+id="orderModal">
 
-            <h2>طريقة الطلب</h2>
 
-            <button class="close" onclick="closeHow()">
-                ×
-            </button>
+<div class="modal-box">
 
-        </div>
 
-        <p>
-            اختر الباقة والمدة واكتب اسمك، ثم اضغط
-            على زر WhatsApp. سيتم تجهيز رسالة مرتبة
-            تحتوي على معلومات طلبك.
-        </p>
+<div class="modal-head">
 
-        <div class="whatsapp-example" id="exampleMessage">
-طلب اشتراك Virexo TV
+<h3>
+تأكيد طلب الاشتراك
+</h3>
 
-الباقة: PREMIUM
-المدة: شهر واحد
-الاسم: شريف
+<button
+class="close"
+onclick="closeModal()">
 
-السعر: 1000 دج
-
-أرغب في تأكيد طلبي، وشكراً.
-        </div>
-
-    </div>
+×
+</button>
 
 </div>
 
 
+<div class="selected">
+
+<small>
+الاشتراك المختار
+</small>
+
+<strong
+id="selectedProduct">
+
+-
+</strong>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+الاسم
+</label>
+
+<input
+id="customerName"
+type="text"
+placeholder="اكتب اسمك">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="مثال: 0670000000">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+طريقة التواصل
+</label>
+
+<select id="contactMethod">
+
+<option>
+WhatsApp
+</option>
+
+<option>
+الهاتف
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="btn btn-main"
+style="width:100%"
+onclick="sendOrder()">
+
+📲 إرسال الطلب عبر WhatsApp
+
+</button>
+
+
+<p class="modal-note">
+
+سيتم فتح WhatsApp وإرسال تفاصيل الاشتراك
+إلى رقم المتجر.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+INFO MODAL
+===================================================== -->
+
+<div
+class="modal"
+id="infoModal">
+
+
+<div class="modal-box">
+
+
+<div class="modal-head">
+
+<h3>
+طريقة الطلب
+</h3>
+
+<button
+class="close"
+onclick="closeInfo()">
+
+×
+</button>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<p>
+اختر الباقة التي تريدها.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<p>
+اختر مدة الاشتراك من القائمة.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<p>
+السعر يتغير تلقائيًا حسب المدة.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+4
+</div>
+
+<p>
+اضغط «اشترك الآن».
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+5
+</div>
+
+<p>
+أدخل معلوماتك ثم أرسل الطلب عبر WhatsApp.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+class="toast"
+id="toast">
+</div>
+
+
+
 <script>
 
-/* =========================================
-   رقم WhatsApp
-   غيّر الرقم فقط
-   مثال الجزائر:
-   213551234567
-========================================= */
+/* =====================================================
+إعدادات المتجر
+===================================================== */
 
-const WHATSAPP_NUMBER = "213XXXXXXXXX";
+const STORE = {
 
-
-/* =========================================
-   الأسعار
-========================================= */
-
-const prices = {
-
-    "PREMIUM": {
-        1:1000,
-        3:2500,
-        6:4500,
-        12:8000
-    },
-
-    "LYNXE IPTV": {
-        1:1200,
-        3:3000,
-        6:5000,
-        12:9000
-    },
-
-    "MY HD": {
-        1:900,
-        3:2200,
-        6:4000,
-        12:7000
-    }
+    /* رقم WhatsApp بدون 0 */
+    whatsapp:"213671995831"
 
 };
 
 
-/* تحديث السعر */
 
-function updatePrice(){
+/* =====================================================
+الباقات
+===================================================== */
 
-    const plan =
-        document.getElementById("plan").value;
+const products = [
 
-    const duration =
-        document.getElementById("duration").value;
+{
+    id:1,
 
-    const price =
-        prices[plan][duration];
+    name:"MY HD",
 
-    document.getElementById("price").textContent =
-        price.toLocaleString("ar-DZ");
+    description:
+        "اختر المدة المناسبة لك وشاهد السعر مباشرة.",
+
+    theme:"green",
+
+    featured:true,
+
+    plans:[
+
+        {
+            duration:"شهر واحد",
+            price:1500
+        },
+
+        {
+            duration:"3 أشهر",
+            price:3500
+        },
+
+        {
+            duration:"6 أشهر",
+            price:6000
+        },
+
+        {
+            duration:"سنة كاملة",
+            price:10000
+        }
+
+    ]
+
+},
+
+
+{
+    id:2,
+
+    name:"LYNXE IPTV",
+
+    description:
+        "اشتراك بمدد مختلفة حسب احتياجك.",
+
+    theme:"teal",
+
+    featured:false,
+
+    plans:[
+
+        {
+            duration:"شهر واحد",
+            price:1800
+        },
+
+        {
+            duration:"3 أشهر",
+            price:4200
+        },
+
+        {
+            duration:"6 أشهر",
+            price:7000
+        },
+
+        {
+            duration:"سنة كاملة",
+            price:12000
+        }
+
+    ]
+
+},
+
+
+{
+    id:3,
+
+    name:"VIREXO PREMIUM",
+
+    description:
+        "اختر الباقة والمدة التي تناسبك.",
+
+    theme:"navy",
+
+    featured:false,
+
+    plans:[
+
+        {
+            duration:"شهر واحد",
+            price:2000
+        },
+
+        {
+            duration:"3 أشهر",
+            price:5000
+        },
+
+        {
+            duration:"6 أشهر",
+            price:8500
+        },
+
+        {
+            duration:"سنة كاملة",
+            price:14000
+        }
+
+    ]
+
+},
+
+
+{
+    id:4,
+
+    name:"PREMIUM MAX",
+
+    description:
+        "اشتراك طويل المدة بسعر أفضل.",
+
+    theme:"gold",
+
+    featured:false,
+
+    plans:[
+
+        {
+            duration:"شهر واحد",
+            price:2200
+        },
+
+        {
+            duration:"3 أشهر",
+            price:5500
+        },
+
+        {
+            duration:"6 أشهر",
+            price:9000
+        },
+
+        {
+            duration:"سنة كاملة",
+            price:15000
+        }
+
+    ]
 
 }
 
-
-/* اختيار باقة */
-
-function choosePlan(plan){
-
-    document.getElementById("plan").value = plan;
-
-    updatePrice();
-
-    scrollToSection("order");
-
-}
+];
 
 
-/* التمرير */
-
-function scrollToSection(id){
-
-    const element =
-        document.getElementById(id);
-
-    if(element){
-
-        element.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-    }
-
-}
+let selectedProduct=null;
 
 
-/* إرسال WhatsApp */
 
-function sendWhatsApp(){
+/* =====================================================
+عرض المنتجات
+===================================================== */
 
-    const plan =
-        document.getElementById("plan").value;
+function renderProducts(list=products){
 
-    const durationValue =
-        document.getElementById("duration").value;
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const price =
-        prices[plan][durationValue];
+    const container=
+        document.getElementById("products");
 
 
-    if(name === ""){
+    if(!list.length){
 
-        alert("من فضلك اكتب اسمك أولاً.");
+        container.innerHTML=`
 
-        document.getElementById("customerName").focus();
+        <div style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:50px;
+            color:#64748b;
+            background:white;
+            border-radius:18px;
+        ">
+
+        لا توجد خدمة مطابقة للبحث 🔎
+
+        </div>
+
+        `;
 
         return;
-
     }
 
 
-    let durationText = "";
+    container.innerHTML =
 
-    if(durationValue == "1"){
-        durationText = "شهر واحد";
+    list.map(product=>`
+
+    <article class="product">
+
+
+        ${
+            product.featured
+            ?
+            `<div class="ribbon">
+                ⭐ الأكثر طلبًا
+            </div>`
+            :
+            ""
+        }
+
+
+        <div class="package ${product.theme}">
+
+
+            <div class="package-screen">
+
+                <div
+                class="package-screen-content">
+
+                    <strong>
+                        ${product.name}
+                    </strong>
+
+                    <span>
+                        اشتراك رقمي
+                    </span>
+
+
+                    <div
+                    class="package-play">
+
+                        ▶
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="product-body">
+
+
+            <div class="product-title">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <span class="status">
+                    متوفر
+                </span>
+
+            </div>
+
+
+            <p class="description">
+                ${product.description}
+            </p>
+
+
+            <label
+            class="select-label">
+
+                مدة الاشتراك
+
+            </label>
+
+
+            <select
+            class="plan-select"
+            id="plan-${product.id}"
+            onchange="updatePrice(${product.id})">
+
+                ${
+                    product.plans.map(
+                        (plan,index)=>`
+
+                        <option value="${index}">
+
+                            ${plan.duration}
+                            —
+                            ${formatPrice(plan.price)}
+                            دج
+
+                        </option>
+
+                        `
+                    ).join("")
+                }
+
+            </select>
+
+
+            <div class="price-box">
+
+                <span class="price-label">
+                    السعر
+                </span>
+
+
+                <div class="price">
+
+                    <strong
+                    id="price-${product.id}">
+
+                        ${formatPrice(
+                            product.plans[0].price
+                        )}
+
+                    </strong>
+
+                    <small>
+                        دج
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <ul class="product-features">
+
+                <li>
+                    <span class="check">✓</span>
+                    اختيار مدة الاشتراك
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    السعر يظهر مباشرة
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    طلب عبر WhatsApp
+                </li>
+
+            </ul>
+
+
+            <button
+            class="btn btn-main"
+            onclick="openOrder(${product.id})">
+
+                📺 اشترك الآن
+
+            </button>
+
+
+        </div>
+
+    </article>
+
+    `).join("");
+
+}
+
+
+
+/* =====================================================
+تحديث السعر
+===================================================== */
+
+function updatePrice(id){
+
+    const product=
+        products.find(
+            p=>p.id===id
+        );
+
+    if(!product)return;
+
+
+    const select=
+        document.getElementById(
+            `plan-${id}`
+        );
+
+
+    const plan=
+        product.plans[
+            parseInt(select.value)
+        ];
+
+
+    document.getElementById(
+        `price-${id}`
+    ).textContent=
+        formatPrice(plan.price);
+
+}
+
+
+
+/* =====================================================
+فتح الطلب
+===================================================== */
+
+function openOrder(id){
+
+    const product=
+        products.find(
+            p=>p.id===id
+        );
+
+    if(!product)return;
+
+
+    const select=
+        document.getElementById(
+            `plan-${id}`
+        );
+
+
+    const plan=
+        product.plans[
+            parseInt(select.value)
+        ];
+
+
+    selectedProduct={
+
+        name:product.name,
+
+        duration:plan.duration,
+
+        price:plan.price
+
+    };
+
+
+    document.getElementById(
+        "selectedProduct"
+    ).textContent=
+
+    `${product.name} — `+
+    `${plan.duration} — `+
+    `${formatPrice(plan.price)} دج`;
+
+
+    document.getElementById(
+        "orderModal"
+    ).classList.add("show");
+
+}
+
+
+
+/* =====================================================
+إغلاق الطلب
+===================================================== */
+
+function closeModal(){
+
+    document.getElementById(
+        "orderModal"
+    ).classList.remove("show");
+
+}
+
+
+
+/* =====================================================
+إرسال الطلب
+===================================================== */
+
+function sendOrder(){
+
+    if(!selectedProduct){
+
+        showToast(
+            "اختر الاشتراك أولاً"
+        );
+
+        return;
     }
 
-    if(durationValue == "3"){
-        durationText = "3 أشهر";
+
+    const name=
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+
+    const phone=
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
+
+
+    const method=
+        document.getElementById(
+            "contactMethod"
+        ).value;
+
+
+    if(name.length<2){
+
+        showToast(
+            "اكتب اسمك من فضلك"
+        );
+
+        return;
     }
 
-    if(durationValue == "6"){
-        durationText = "6 أشهر";
+
+    if(phone.length<8){
+
+        showToast(
+            "أدخل رقم هاتف صحيح"
+        );
+
+        return;
     }
 
-    if(durationValue == "12"){
-        durationText = "12 شهر";
-    }
+
+    const message=
+
+`📺 طلب اشتراك جديد
+
+━━━━━━━━━━━━━━
+
+الخدمة:
+${selectedProduct.name}
+
+المدة:
+${selectedProduct.duration}
+
+السعر:
+${formatPrice(selectedProduct.price)} دج
+
+━━━━━━━━━━━━━━
+
+اسم الزبون:
+${name}
+
+رقم الهاتف:
+${phone}
+
+طريقة التواصل:
+${method}
+
+━━━━━━━━━━━━━━
+
+أرغب في إتمام الطلب.`;
 
 
-    /*
-       رسالة WhatsApp مرتبة
-       بدون فراغات عشوائية
-    */
 
-    const message =
-`📺 *طلب اشتراك Virexo TV*
-
-👤 الاسم: ${name}
-📦 الباقة: ${plan}
-⏱️ المدة: ${durationText}
-💰 السعر: ${price.toLocaleString("ar-DZ")} دج
-
-✅ أرغب في تأكيد طلبي.
-
-شكراً لكم ❤️`;
-
-
-    const url =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
+    const url=
+        "https://wa.me/"
+        +
+        STORE.whatsapp
+        +
+        "?text="
+        +
         encodeURIComponent(message);
 
 
-    window.open(url,"_blank");
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    closeModal();
 
 }
 
 
-/* Modal */
 
-function openHow(){
+/* =====================================================
+البحث
+===================================================== */
 
-    document
-        .getElementById("howModal")
-        .classList.add("show");
+function searchProducts(){
+
+    const value=
+        document.getElementById(
+            "searchInput"
+        ).value
+        .trim()
+        .toLowerCase();
+
+
+    const filtered=
+        products.filter(
+            product=>
+
+                product.name
+                .toLowerCase()
+                .includes(value)
+
+        );
+
+
+    renderProducts(filtered);
 
 }
 
 
-function closeHow(){
 
-    document
-        .getElementById("howModal")
-        .classList.remove("show");
+/* =====================================================
+Scroll
+===================================================== */
 
-}
+function scrollToStore(){
 
-
-document
-    .getElementById("howModal")
-    .addEventListener("click",function(e){
-
-        if(e.target === this){
-
-            closeHow();
-
-        }
-
+    document.getElementById(
+        "store"
+    ).scrollIntoView({
+        behavior:"smooth"
     });
 
+}
 
-/* أول سعر */
 
-updatePrice();
+
+/* =====================================================
+Info
+===================================================== */
+
+function openInfo(){
+
+    document.getElementById(
+        "infoModal"
+    ).classList.add("show");
+
+}
+
+
+function closeInfo(){
+
+    document.getElementById(
+        "infoModal"
+    ).classList.remove("show");
+
+}
+
+
+
+/* =====================================================
+Toast
+===================================================== */
+
+function showToast(message){
+
+    const toast=
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent=message;
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(
+        ()=>{
+            toast.classList.remove("show");
+        },
+        3000
+    );
+
+}
+
+
+
+/* =====================================================
+تنسيق السعر
+===================================================== */
+
+function formatPrice(price){
+
+    return Number(price)
+        .toLocaleString("ar-DZ");
+
+}
+
+
+
+/* =====================================================
+إغلاق بالنقر خارج النافذة
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        const order=
+            document.getElementById(
+                "orderModal"
+            );
+
+        const info=
+            document.getElementById(
+                "infoModal"
+            );
+
+
+        if(e.target===order){
+            closeModal();
+        }
+
+
+        if(e.target===info){
+            closeInfo();
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+السنة
+===================================================== */
+
+document.getElementById(
+    "year"
+).textContent=
+    new Date().getFullYear();
+
+
+
+/* =====================================================
+تشغيل
+===================================================== */
+
+renderProducts();
 
 </script>
 
 </body>
-</html>
+    </html>
