@@ -1,1 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Virexo TV | متجر الاشتراكات الرقمية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#f3f6fb;
+    color:#172033;
+    overflow-x:hidden;
+}
+
+button,
+select,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    height:78px;
+    background:#050505;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#00c6ff,#1769ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    box-shadow:0 5px 15px rgba(0,126,255,.35);
+}
+
+.logo-text{
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo-text small{
+    display:block;
+    color:#aaa;
+    font-size:10px;
+    font-weight:500;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:50%;
+    background:#171717;
+    color:white;
+    font-size:20px;
+}
+
+/* ===== TOP NAV ===== */
+
+.top-nav{
+    background:white;
+    display:flex;
+    gap:10px;
+    padding:12px 18px;
+    overflow-x:auto;
+    border-bottom:1px solid #e7eaf0;
+}
+
+.nav-btn{
+    border:0;
+    background:#edf5ff;
+    color:#1769df;
+    padding:11px 20px;
+    border-radius:14px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.nav-btn.active{
+    color:white;
+    background:linear-gradient(135deg,#1976ff,#1262d8);
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    margin:0 18px;
+    margin-top:18px;
+    border-radius:28px;
+    padding:30px 20px 26px;
+    text-align:center;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,191,255,.35),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(0,255,200,.25),transparent 35%),
+        linear-gradient(145deg,#06234b,#063b6e 55%,#007f92);
+    box-shadow:0 15px 35px rgba(0,69,125,.22);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:35px 35px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:34px;
+    line-height:1.35;
+    margin-bottom:8px;
+    font-weight:800;
+}
+
+.hero h1 span{
+    color:#49a7ff;
+}
+
+.hero p{
+    color:#dbeeff;
+    font-size:14px;
+    line-height:2;
+    max-width:600px;
+    margin:auto;
+}
+
+/* ===== BUTTON ===== */
+
+.primary-btn{
+    border:0;
+    margin-top:22px;
+    width:100%;
+    max-width:500px;
+    height:58px;
+    border-radius:18px;
+    color:white;
+    background:linear-gradient(135deg,#1681ff,#1165df);
+    font-size:16px;
+    font-weight:800;
+    box-shadow:0 9px 20px rgba(0,93,230,.3);
+    transition:.2s;
+}
+
+.primary-btn:active{
+    transform:scale(.97);
+}
+
+/* ===== PLANS ===== */
+
+.section{
+    padding:25px 18px 5px;
+}
+
+.section-title{
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.plan{
+    min-width:0;
+    background:white;
+    border-radius:20px;
+    padding:18px 10px;
+    text-align:center;
+    border:1px solid #e5eaf1;
+    box-shadow:0 7px 20px rgba(20,40,70,.07);
+    transition:.2s;
+}
+
+.plan:active{
+    transform:scale(.97);
+}
+
+.plan-icon{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    margin:0 auto 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:21px;
+    background:linear-gradient(135deg,#1883ff,#1264d7);
+}
+
+.plan h3{
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.plan p{
+    font-size:11px;
+    color:#14a477;
+    margin-top:3px;
+}
+
+/* ===== FEATURES ===== */
+
+.features{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.feature{
+    background:white;
+    border:1px solid #e5e9ef;
+    border-radius:23px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    min-height:115px;
+    box-shadow:0 7px 20px rgba(20,40,70,.06);
+}
+
+.feature-icon{
+    flex:0 0 58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    color:white;
+    background:#13b886;
+}
+
+.feature:nth-child(2) .feature-icon{
+    background:#1976ed;
+}
+
+.feature:nth-child(3) .feature-icon{
+    background:#f5a000;
+}
+
+.feature-text{
+    flex:1;
+    min-width:0;
+}
+
+.feature-text h3{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.feature-text p{
+    color:#7b8493;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* ===== ORDER BOX ===== */
+
+.order-box{
+    margin:25px 18px;
+    background:white;
+    border-radius:25px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(20,40,70,.08);
+    border:1px solid #e6eaf0;
+}
+
+.order-box h2{
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.order-box .sub{
+    color:#7c8592;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.form-group select,
+.form-group input{
+    width:100%;
+    height:50px;
+    border:1px solid #dce2ea;
+    border-radius:14px;
+    padding:0 14px;
+    outline:none;
+    background:#fafcff;
+    color:#182234;
+}
+
+.form-group select:focus,
+.form-group input:focus{
+    border-color:#1976ed;
+}
+
+.price-box{
+    background:#eef7ff;
+    border-radius:16px;
+    padding:14px;
+    margin:10px 0;
+    text-align:center;
+}
+
+.price-box span{
+    display:block;
+    color:#718096;
+    font-size:12px;
+}
+
+.price{
+    color:#1269df;
+    font-size:24px;
+    font-weight:800;
+}
+
+.whatsapp-btn{
+    width:100%;
+    height:55px;
+    border:0;
+    border-radius:16px;
+    background:#16b97e;
+    color:white;
+    font-weight:800;
+    font-size:15px;
+    margin-top:10px;
+    box-shadow:0 8px 18px rgba(22,185,126,.25);
+}
+
+/* ===== AD ===== */
+
+.ad-box{
+    margin:25px 18px;
+    border-radius:20px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1265dd,#11b887);
+    color:white;
+    box-shadow:0 10px 25px rgba(0,90,180,.15);
+}
+
+.ad-content{
+    min-height:64px;
+    padding:13px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.ad-text{
+    flex:1;
+    min-width:0;
+}
+
+.ad-text strong{
+    display:block;
+    font-size:15px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.ad-text span{
+    display:block;
+    font-size:11px;
+    opacity:.9;
+    margin-top:3px;
+}
+
+.ad-button{
+    border:0;
+    background:white;
+    color:#0879bc;
+    padding:10px 15px;
+    border-radius:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+/* ===== HOW TO ===== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.step{
+    background:white;
+    border-radius:18px;
+    padding:17px 8px;
+    text-align:center;
+    border:1px solid #e7ebf1;
+}
+
+.step-number{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#176ee5;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 8px;
+    font-weight:800;
+}
+
+.step h4{
+    font-size:13px;
+}
+
+.step p{
+    color:#7c8490;
+    font-size:10px;
+    margin-top:3px;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    margin-top:35px;
+    background:#07111f;
+    color:white;
+    text-align:center;
+    padding:25px 18px;
+}
+
+.footer strong{
+    font-size:19px;
+}
+
+.footer p{
+    color:#9ca8b8;
+    font-size:11px;
+    margin-top:6px;
+}
+
+/* ===== MODAL ===== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+    z-index:2000;
+    padding:15px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    width:100%;
+    max-width:550px;
+    background:white;
+    border-radius:25px 25px 15px 15px;
+    padding:24px;
+    animation:up .25s ease;
+}
+
+@keyframes up{
+    from{
+        transform:translateY(100%);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.close{
+    border:0;
+    background:#f0f2f5;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    font-size:20px;
+}
+
+.modal-content p{
+    color:#626d7c;
+    line-height:2;
+    font-size:13px;
+}
+
+.whatsapp-example{
+    margin-top:15px;
+    background:#e9f8ee;
+    border-radius:15px;
+    padding:15px;
+    white-space:pre-line;
+    color:#17251c;
+    font-size:13px;
+    line-height:1.9;
+    direction:rtl;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+    .header{
+        height:70px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero{
+        margin-left:12px;
+        margin-right:12px;
+        border-radius:23px;
+    }
+
+    .section{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .plans{
+        gap:8px;
+    }
+
+    .plan{
+        padding:15px 5px;
+    }
+
+    .plan h3{
+        font-size:13px;
+    }
+
+    .plan p{
+        font-size:10px;
+    }
+
+    .feature{
+        min-height:105px;
+    }
+
+    .steps{
+        gap:7px;
+    }
+}
+
+@media(max-width:380px){
+
+    .logo-text{
+        font-size:17px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .feature-icon{
+        flex-basis:52px;
+        height:52px;
+    }
+
+    .feature-text h3{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo">
+        <div class="logo-icon">▶</div>
+
+        <div class="logo-text">
+            Virexo TV
+            <small>متجر الاشتراكات الرقمية</small>
+        </div>
+    </div>
+
+    <div class="header-actions">
+        <button class="icon-btn" onclick="openHow()">☰</button>
+    </div>
+
+</header>
+
+
+<!-- NAV -->
+<nav class="top-nav">
+
+    <button class="nav-btn active" onclick="scrollToSection('order')">
+        طريقة الطلب
+    </button>
+
+    <button class="nav-btn" onclick="scrollToSection('plans')">
+        الباقات
+    </button>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            ترفيه <span>بلا حدود</span>
+        </h1>
+
+        <p>
+            اختر الباقة المناسبة لك، حدد مدة الاشتراك،
+            وشاهد السعر مباشرة قبل إرسال طلبك.
+        </p>
+
+        <button class="primary-btn" onclick="scrollToSection('plans')">
+            استكشف الباقات
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PLANS -->
+<section class="section" id="plans">
+
+    <h2 class="section-title">
+        الباقات المتوفرة
+    </h2>
+
+    <div class="plans">
+
+        <button class="plan" onclick="choosePlan('PREMIUM')">
+
+            <div class="plan-icon">★</div>
+
+            <h3>PREMIUM</h3>
+
+            <p>متوفر الآن</p>
+
+        </button>
+
+
+        <button class="plan" onclick="choosePlan('LYNXE IPTV')">
+
+            <div class="plan-icon">▶</div>
+
+            <h3>LYNXE IPTV</h3>
+
+            <p>متوفر الآن</p>
+
+        </button>
+
+
+        <button class="plan" onclick="choosePlan('MY HD')">
+
+            <div class="plan-icon">HD</div>
+
+            <h3>MY HD</h3>
+
+            <p>متوفر الآن</p>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- AD -->
+<div class="ad-box">
+
+    <div class="ad-content">
+
+        <div class="ad-text">
+
+            <strong>
+                🔥 عرض خاص على الاشتراكات
+            </strong>
+
+            <span>
+                اختر باقتك وأرسل الطلب مباشرة
+            </span>
+
+        </div>
+
+        <button class="ad-button" onclick="scrollToSection('order')">
+            اطلب الآن
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FEATURES -->
+<section class="section">
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">✓</div>
+
+            <div class="feature-text">
+
+                <h3>اختيار سهل</h3>
+
+                <p>
+                    اختر الباقة والمدة في مكان واحد بدون تعقيد.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⚡</div>
+
+            <div class="feature-text">
+
+                <h3>طلب سريع</h3>
+
+                <p>
+                    أرسل طلبك مباشرة عبر WhatsApp خلال ثوانٍ.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">💰</div>
+
+            <div class="feature-text">
+
+                <h3>أسعار واضحة</h3>
+
+                <p>
+                    السعر يظهر أمامك قبل إرسال الطلب.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDER -->
+<section class="order-box" id="order">
+
+    <h2>اطلب اشتراكك 📺</h2>
+
+    <p class="sub">
+        اختر الباقة والمدة، ثم اضغط إرسال عبر WhatsApp.
+    </p>
+
+
+    <div class="form-group">
+
+        <label>الباقة</label>
+
+        <select id="plan">
+
+            <option value="PREMIUM">PREMIUM</option>
+
+            <option value="LYNXE IPTV">
+                LYNXE IPTV
+            </option>
+
+            <option value="MY HD">
+                MY HD
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>مدة الاشتراك</label>
+
+        <select id="duration" onchange="updatePrice()">
+
+            <option value="1">شهر واحد</option>
+
+            <option value="3">3 أشهر</option>
+
+            <option value="6">6 أشهر</option>
+
+            <option value="12">12 شهر</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>اسمك</label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="اكتب اسمك"
+        >
+
+    </div>
+
+
+    <div class="price-box">
+
+        <span>السعر الإجمالي</span>
+
+        <div class="price">
+            <span id="price">1000</span> دج
+        </div>
+
+    </div>
+
+
+    <button class="whatsapp-btn" onclick="sendWhatsApp()">
+        💬 إرسال الطلب عبر WhatsApp
+    </button>
+
+</section>
+
+
+<!-- HOW TO -->
+<section class="section">
+
+    <h2 class="section-title">
+        كيف تطلب؟
+    </h2>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h4>اختر الباقة</h4>
+
+            <p>
+                حدد الخدمة المناسبة
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h4>حدد المدة</h4>
+
+            <p>
+                اختر مدة الاشتراك
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h4>أرسل الطلب</h4>
+
+            <p>
+                عبر WhatsApp
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <strong>Virexo TV</strong>
+
+    <p>
+        متجر الاشتراكات الرقمية
+    </p>
+
+    <p>
+        © 2026 Virexo TV - جميع الحقوق محفوظة
+    </p>
+
+</footer>
+
+
+<!-- MODAL -->
+<div class="modal" id="howModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>طريقة الطلب</h2>
+
+            <button class="close" onclick="closeHow()">
+                ×
+            </button>
+
+        </div>
+
+        <p>
+            اختر الباقة والمدة واكتب اسمك، ثم اضغط
+            على زر WhatsApp. سيتم تجهيز رسالة مرتبة
+            تحتوي على معلومات طلبك.
+        </p>
+
+        <div class="whatsapp-example" id="exampleMessage">
+طلب اشتراك Virexo TV
+
+الباقة: PREMIUM
+المدة: شهر واحد
+الاسم: شريف
+
+السعر: 1000 دج
+
+أرغب في تأكيد طلبي، وشكراً.
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   رقم WhatsApp
+   غيّر الرقم فقط
+   مثال الجزائر:
+   213551234567
+========================================= */
+
+const WHATSAPP_NUMBER = "213XXXXXXXXX";
+
+
+/* =========================================
+   الأسعار
+========================================= */
+
+const prices = {
+
+    "PREMIUM": {
+        1:1000,
+        3:2500,
+        6:4500,
+        12:8000
+    },
+
+    "LYNXE IPTV": {
+        1:1200,
+        3:3000,
+        6:5000,
+        12:9000
+    },
+
+    "MY HD": {
+        1:900,
+        3:2200,
+        6:4000,
+        12:7000
+    }
+
+};
+
+
+/* تحديث السعر */
+
+function updatePrice(){
+
+    const plan =
+        document.getElementById("plan").value;
+
+    const duration =
+        document.getElementById("duration").value;
+
+    const price =
+        prices[plan][duration];
+
+    document.getElementById("price").textContent =
+        price.toLocaleString("ar-DZ");
+
+}
+
+
+/* اختيار باقة */
+
+function choosePlan(plan){
+
+    document.getElementById("plan").value = plan;
+
+    updatePrice();
+
+    scrollToSection("order");
+
+}
+
+
+/* التمرير */
+
+function scrollToSection(id){
+
+    const element =
+        document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+}
+
+
+/* إرسال WhatsApp */
+
+function sendWhatsApp(){
+
+    const plan =
+        document.getElementById("plan").value;
+
+    const durationValue =
+        document.getElementById("duration").value;
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const price =
+        prices[plan][durationValue];
+
+
+    if(name === ""){
+
+        alert("من فضلك اكتب اسمك أولاً.");
+
+        document.getElementById("customerName").focus();
+
+        return;
+
+    }
+
+
+    let durationText = "";
+
+    if(durationValue == "1"){
+        durationText = "شهر واحد";
+    }
+
+    if(durationValue == "3"){
+        durationText = "3 أشهر";
+    }
+
+    if(durationValue == "6"){
+        durationText = "6 أشهر";
+    }
+
+    if(durationValue == "12"){
+        durationText = "12 شهر";
+    }
+
+
+    /*
+       رسالة WhatsApp مرتبة
+       بدون فراغات عشوائية
+    */
+
+    const message =
+`📺 *طلب اشتراك Virexo TV*
+
+👤 الاسم: ${name}
+📦 الباقة: ${plan}
+⏱️ المدة: ${durationText}
+💰 السعر: ${price.toLocaleString("ar-DZ")} دج
+
+✅ أرغب في تأكيد طلبي.
+
+شكراً لكم ❤️`;
+
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(url,"_blank");
+
+}
+
+
+/* Modal */
+
+function openHow(){
+
+    document
+        .getElementById("howModal")
+        .classList.add("show");
+
+}
+
+
+function closeHow(){
+
+    document
+        .getElementById("howModal")
+        .classList.remove("show");
+
+}
+
+
+document
+    .getElementById("howModal")
+    .addEventListener("click",function(e){
+
+        if(e.target === this){
+
+            closeHow();
+
+        }
+
+    });
+
+
+/* أول سعر */
+
+updatePrice();
+
+</script>
+
+</body>
+</html>
