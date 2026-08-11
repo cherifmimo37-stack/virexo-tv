@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -13,40 +13,43 @@
 <style>
 
 /* =====================================================
-   V2 — VIREXO TV
-   الهوية:
-   كحلي + زمردي + تركوازي + ذهبي
+   VIREXO TV — GOLD & NAVY PRO
 ===================================================== */
 
 :root{
-    --navy:#0b172a;
-    --navy2:#12233b;
-    --navy3:#1b304d;
+
+    --navy:#071426;
+    --navy2:#0d2038;
+    --navy3:#173554;
+
+    --blue:#1556a8;
+    --blue2:#2877d4;
+
+    --gold:#c89b2c;
+    --gold2:#f0c75e;
+    --gold3:#ffe39a;
 
     --emerald:#079669;
-    --emerald2:#12b981;
-
     --teal:#0ea5a4;
-    --gold:#d4a72c;
 
     --white:#ffffff;
-    --bg:#f4f7f9;
-    --soft:#f8fafb;
+    --bg:#f3f6f9;
+    --soft:#f8fafc;
 
     --text:#172235;
     --muted:#64748b;
 
-    --border:#e2e8ee;
+    --border:#e1e7ee;
 
     --shadow:
-        0 10px 30px rgba(11,23,42,.07);
+        0 10px 30px rgba(7,20,38,.08);
 
     --shadow2:
-        0 20px 55px rgba(11,23,42,.13);
+        0 25px 65px rgba(7,20,38,.17);
 }
 
 
-/* ================= RESET ================= */
+/* RESET */
 
 *{
     margin:0;
@@ -80,29 +83,38 @@ a{
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+HEADER
+===================================================== */
 
 .header{
     position:sticky;
     top:0;
     z-index:1000;
 
-    background:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.96);
+
     backdrop-filter:blur(18px);
 
-    border-bottom:1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:
+        0 3px 20px rgba(0,0,0,.04);
 }
 
 .nav{
-    max-width:1250px;
+    max-width:1300px;
     margin:auto;
 
-    min-height:70px;
+    min-height:72px;
 
     padding:10px 22px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
@@ -113,13 +125,13 @@ a{
 
     color:var(--navy);
 
-    font-size:21px;
+    font-size:22px;
     font-weight:900;
 }
 
 .logo-icon{
-    width:45px;
-    height:45px;
+    width:46px;
+    height:46px;
 
     display:grid;
     place-items:center;
@@ -135,24 +147,27 @@ a{
 
     color:white;
 
+    border:
+        1px solid rgba(240,199,94,.35);
+
     box-shadow:
-        0 8px 22px rgba(11,23,42,.18);
+        0 8px 25px rgba(7,20,38,.2);
 }
 
 .logo-name span{
-    color:var(--emerald);
+    color:var(--gold);
 }
 
 .logo-sub{
     display:block;
 
-    color:#8a97a8;
+    color:#8995a6;
 
     font-size:8px;
 
     font-weight:700;
 
-    margin-top:-3px;
+    margin-top:-4px;
 }
 
 .nav-actions{
@@ -164,28 +179,37 @@ a{
 .nav-link{
     border:0;
 
-    background:#edf9f5;
+    background:
+        #fff8e7;
 
-    color:var(--emerald);
+    color:#9a7115;
 
-    padding:9px 15px;
+    padding:10px 16px;
 
     border-radius:11px;
 
     font-size:11px;
-    font-weight:800;
+    font-weight:900;
 }
 
 .nav-link.dark{
-    background:var(--navy);
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy3)
+        );
+
     color:white;
 }
 
 
-/* ================= HERO COVER ================= */
+/* =====================================================
+HERO
+===================================================== */
 
 .hero{
-    max-width:1250px;
+    max-width:1300px;
     margin:auto;
 
     padding:22px;
@@ -193,47 +217,56 @@ a{
 
 .hero-cover{
     position:relative;
+
     overflow:hidden;
 
-    min-height:390px;
+    min-height:405px;
 
     border-radius:30px;
 
     background:
+
         radial-gradient(
-            circle at 15% 20%,
-            rgba(18,185,129,.24),
-            transparent 35%
+            circle at 10% 20%,
+            rgba(240,199,94,.20),
+            transparent 30%
         ),
 
         radial-gradient(
             circle at 85% 80%,
-            rgba(14,165,164,.18),
+            rgba(40,119,212,.20),
             transparent 30%
         ),
 
         linear-gradient(
             125deg,
-            #081321,
-            #102640 58%,
-            #0c4a48
+            #050f1e,
+            #0b2038 55%,
+            #12395c
         );
 
-    box-shadow:var(--shadow2);
+    box-shadow:
+        var(--shadow2);
+
+    border:
+        1px solid rgba(240,199,94,.15);
 }
 
-.hero-cover:before{
+.hero-cover:after{
     content:"";
 
     position:absolute;
 
     inset:0;
 
+    pointer-events:none;
+
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.15),
-            transparent
+            rgba(255,255,255,.04),
+            transparent 50%,
+            rgba(240,199,94,.05)
         );
 }
 
@@ -242,16 +275,16 @@ a{
 
     inset:0;
 
-    opacity:.09;
+    opacity:.07;
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,.5) 1px,
+            rgba(255,255,255,.6) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.5) 1px,
+            rgba(255,255,255,.6) 1px,
             transparent 1px
         );
 
@@ -267,32 +300,37 @@ a{
 
 .hero-content{
     position:relative;
-    z-index:3;
+
+    z-index:5;
 
     max-width:650px;
 
-    padding:58px 55px;
+    padding:60px 55px;
 }
 
 .hero-badge{
     display:inline-flex;
+
     align-items:center;
-    gap:7px;
 
-    background:
-        rgba(18,185,129,.15);
+    gap:8px;
 
-    border:
-        1px solid rgba(18,185,129,.3);
-
-    color:#62e6b6;
-
-    padding:8px 13px;
+    padding:8px 14px;
 
     border-radius:50px;
 
+    background:
+        rgba(240,199,94,.10);
+
+    border:
+        1px solid rgba(240,199,94,.30);
+
+    color:
+        var(--gold3);
+
     font-size:10px;
-    font-weight:800;
+
+    font-weight:900;
 }
 
 .live-dot{
@@ -301,10 +339,10 @@ a{
 
     border-radius:50%;
 
-    background:#25d996;
+    background:#38d39b;
 
     box-shadow:
-        0 0 0 5px rgba(37,217,150,.12);
+        0 0 0 5px rgba(56,211,155,.12);
 }
 
 .hero h1{
@@ -313,7 +351,7 @@ a{
     color:white;
 
     font-size:
-        clamp(34px,5vw,57px);
+        clamp(34px,5vw,58px);
 
     line-height:1.25;
 
@@ -321,7 +359,7 @@ a{
 }
 
 .hero h1 span{
-    color:#39d6a0;
+    color:var(--gold2);
 }
 
 .hero-text{
@@ -333,7 +371,7 @@ a{
 
     line-height:2;
 
-    max-width:590px;
+    max-width:600px;
 }
 
 .hero-buttons{
@@ -353,27 +391,27 @@ a{
 
     font-size:12px;
 
-    font-weight:800;
+    font-weight:900;
 
-    transition:.22s;
+    transition:.25s;
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
 
 .btn-main{
     background:
         linear-gradient(
             135deg,
-            var(--emerald),
-            var(--teal)
+            var(--gold),
+            var(--gold2)
         );
 
-    color:white;
+    color:#172235;
 
     box-shadow:
-        0 10px 25px rgba(7,150,105,.3);
+        0 12px 30px rgba(200,155,44,.25);
 }
 
 .btn-white{
@@ -383,7 +421,9 @@ a{
 }
 
 
-/* ================= TV COVER ================= */
+/* =====================================================
+TV
+===================================================== */
 
 .tv-showcase{
     position:absolute;
@@ -396,7 +436,7 @@ a{
     width:390px;
     height:245px;
 
-    z-index:2;
+    z-index:3;
 }
 
 .tv{
@@ -411,19 +451,20 @@ a{
     border-radius:24px;
 
     border:
-        8px solid #263c57;
+        8px solid #243b58;
 
     background:
         linear-gradient(
             145deg,
-            #07101d,
-            #172b44
+            #06101e,
+            #183451
         );
 
     box-shadow:
-        0 30px 60px rgba(0,0,0,.4);
+        0 30px 60px rgba(0,0,0,.45);
 
     display:grid;
+
     place-items:center;
 }
 
@@ -437,7 +478,7 @@ a{
     background:
         radial-gradient(
             circle,
-            rgba(18,185,129,.17),
+            rgba(240,199,94,.16),
             transparent 60%
         );
 }
@@ -451,16 +492,17 @@ a{
 }
 
 .tv-logo span{
-    color:#36d99f;
+    color:var(--gold2);
 }
 
 .tv-play{
     width:60px;
     height:60px;
 
-    margin-top:15px;
+    margin:15px auto 0;
 
     display:grid;
+
     place-items:center;
 
     border-radius:50%;
@@ -468,12 +510,12 @@ a{
     background:
         linear-gradient(
             135deg,
-            var(--emerald),
-            var(--teal)
+            var(--gold),
+            var(--gold2)
         );
 
     box-shadow:
-        0 12px 30px rgba(18,185,129,.35);
+        0 12px 30px rgba(240,199,94,.3);
 }
 
 .tv-stand{
@@ -485,7 +527,7 @@ a{
     width:70px;
     height:25px;
 
-    background:#157DEC;
+    background:#243b58;
 
     clip-path:
         polygon(
@@ -497,7 +539,9 @@ a{
 }
 
 
-/* ================= SERVICES MINI CARDS ================= */
+/* =====================================================
+SERVICES
+===================================================== */
 
 .service-strip{
     position:absolute;
@@ -513,17 +557,17 @@ a{
 }
 
 .service-mini{
-    min-width:100px;
+    min-width:105px;
 
-    padding:9px 12px;
+    padding:10px 13px;
 
     border-radius:12px;
 
     background:
-        rgba(255,255,255,.09);
+        rgba(255,255,255,.08);
 
     border:
-        1px solid rgba(255,255,255,.13);
+        1px solid rgba(240,199,94,.20);
 
     backdrop-filter:blur(12px);
 
@@ -541,7 +585,7 @@ a{
 .service-mini span{
     display:block;
 
-    color:#9fe9d0;
+    color:var(--gold3);
 
     font-size:8px;
 
@@ -549,10 +593,12 @@ a{
 }
 
 
-/* ================= AD BAR ================= */
+/* =====================================================
+AD
+===================================================== */
 
 .ad-wrapper{
-    max-width:1250px;
+    max-width:1300px;
     margin:auto;
 
     padding:
@@ -562,7 +608,7 @@ a{
 .ad-bar{
     overflow:hidden;
 
-    height:50px;
+    height:52px;
 
     border-radius:14px;
 
@@ -570,22 +616,24 @@ a{
         linear-gradient(
             90deg,
             var(--navy),
-            #17314e,
+            #153657,
             var(--navy)
         );
 
     border:
-        1px solid rgba(255,255,255,.05);
+        1px solid rgba(240,199,94,.18);
 
     box-shadow:
-        0 8px 22px rgba(11,23,42,.1);
+        0 8px 22px rgba(7,20,38,.12);
 
     display:flex;
+
     align-items:center;
 }
 
 .ad-label{
     position:relative;
+
     z-index:2;
 
     flex-shrink:0;
@@ -595,6 +643,7 @@ a{
     padding:0 18px;
 
     display:flex;
+
     align-items:center;
 
     gap:7px;
@@ -602,11 +651,11 @@ a{
     background:
         linear-gradient(
             135deg,
-            var(--emerald),
-            var(--teal)
+            var(--gold),
+            var(--gold2)
         );
 
-    color:white;
+    color:#172235;
 
     font-size:10px;
 
@@ -623,7 +672,7 @@ a{
     animation:
         ticker 22s linear infinite;
 
-    color:#e8f8f3;
+    color:#edf4ff;
 
     font-size:11px;
 
@@ -633,10 +682,11 @@ a{
 .ad-content span{
     margin:0 35px;
 
-    color:#66e1b8;
+    color:var(--gold2);
 }
 
 @keyframes ticker{
+
     from{
         transform:translateX(0);
     }
@@ -644,13 +694,16 @@ a{
     to{
         transform:translateX(100%);
     }
+
 }
 
 
-/* ================= FEATURES ================= */
+/* =====================================================
+FEATURES
+===================================================== */
 
 .features{
-    max-width:1250px;
+    max-width:1300px;
 
     margin:auto;
 
@@ -681,8 +734,16 @@ a{
 
     gap:12px;
 
-    box-shadow:
-        var(--shadow);
+    box-shadow:var(--shadow);
+
+    transition:.2s;
+}
+
+.feature:hover{
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(200,155,44,.35);
 }
 
 .feature-icon{
@@ -692,6 +753,7 @@ a{
     flex-shrink:0;
 
     display:grid;
+
     place-items:center;
 
     border-radius:13px;
@@ -719,8 +781,8 @@ a{
     background:
         linear-gradient(
             135deg,
-            #b48618,
-            #e1bd51
+            #a97812,
+            var(--gold2)
         );
 }
 
@@ -739,10 +801,12 @@ a{
 }
 
 
-/* ================= STORE ================= */
+/* =====================================================
+STORE
+===================================================== */
 
 .store{
-    max-width:1250px;
+    max-width:1300px;
 
     margin:auto;
 
@@ -771,7 +835,7 @@ a{
 }
 
 .section-title h2 span{
-    color:var(--emerald);
+    color:var(--gold);
 }
 
 .section-title p{
@@ -783,7 +847,7 @@ a{
 }
 
 .search{
-    width:260px;
+    width:270px;
 
     padding:13px 15px;
 
@@ -803,14 +867,16 @@ a{
 
 .search:focus{
     border-color:
-        rgba(7,150,105,.45);
+        rgba(200,155,44,.65);
 
     box-shadow:
-        0 0 0 4px rgba(7,150,105,.06);
+        0 0 0 4px rgba(200,155,44,.08);
 }
 
 
-/* ================= PRODUCTS ================= */
+/* =====================================================
+PRODUCTS
+===================================================== */
 
 .products{
     display:grid;
@@ -818,7 +884,7 @@ a{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:20px;
+    gap:21px;
 }
 
 .product{
@@ -831,17 +897,20 @@ a{
     border:
         1px solid var(--border);
 
-    border-radius:22px;
+    border-radius:23px;
 
     box-shadow:var(--shadow);
 
-    transition:.25s;
+    transition:.3s;
 }
 
 .product:hover{
-    transform:translateY(-5px);
+    transform:translateY(-7px);
 
     box-shadow:var(--shadow2);
+
+    border-color:
+        rgba(200,155,44,.35);
 }
 
 .ribbon{
@@ -852,29 +921,36 @@ a{
 
     z-index:10;
 
-    padding:6px 10px;
+    padding:7px 11px;
 
-    border-radius:8px;
+    border-radius:9px;
 
-    background:white;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
 
-    color:var(--emerald);
+    color:#172235;
 
     font-size:9px;
 
     font-weight:900;
 
     box-shadow:
-        0 6px 18px rgba(0,0,0,.12);
+        0 6px 18px rgba(0,0,0,.15);
 }
 
 
-/* ================= PRODUCT IMAGE ================= */
+/* =====================================================
+PACKAGE IMAGE
+===================================================== */
 
 .package{
     position:relative;
 
-    height:190px;
+    height:205px;
 
     overflow:hidden;
 
@@ -887,7 +963,7 @@ a{
     background:
         linear-gradient(
             135deg,
-            #07543f,
+            #064b3b,
             #0da578
         );
 }
@@ -896,8 +972,8 @@ a{
     background:
         linear-gradient(
             135deg,
-            #075e65,
-            #12a9a7
+            #07515d,
+            #168f9e
         );
 }
 
@@ -905,8 +981,8 @@ a{
     background:
         linear-gradient(
             135deg,
-            #0b172a,
-            #284767
+            #061426,
+            #173c63
         );
 }
 
@@ -914,25 +990,29 @@ a{
     background:
         linear-gradient(
             135deg,
-            #79601b,
-            #c5a038
+            #5d4612,
+            #b78b20,
+            #e2bf58
         );
 }
+
+
+/* decorative circles */
 
 .package:before{
     content:"";
 
     position:absolute;
 
-    width:230px;
-    height:230px;
+    width:260px;
+    height:260px;
 
     border-radius:50%;
 
     background:
         rgba(255,255,255,.08);
 
-    top:-120px;
+    top:-145px;
     left:-70px;
 }
 
@@ -941,91 +1021,113 @@ a{
 
     position:absolute;
 
-    width:180px;
-    height:180px;
+    width:190px;
+    height:190px;
 
     border-radius:50%;
 
     background:
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.07);
 
-    bottom:-100px;
+    bottom:-110px;
     right:-50px;
 }
 
-.package-screen{
+
+/* REAL IMAGE */
+
+.package-image{
     position:relative;
-    z-index:3;
 
-    width:210px;
-    height:125px;
+    z-index:4;
 
-    border:
-        6px solid rgba(255,255,255,.78);
+    width:100%;
+    height:100%;
 
-    border-radius:17px;
+    object-fit:cover;
+
+    transition:.4s;
+
+    filter:
+        saturate(1.08)
+        contrast(1.03);
+}
+
+.product:hover .package-image{
+    transform:scale(1.05);
+}
+
+
+/* image overlay */
+
+.package-overlay{
+    position:absolute;
+
+    inset:0;
+
+    z-index:5;
+
+    pointer-events:none;
 
     background:
         linear-gradient(
-            145deg,
-            #081321,
-            #203752
+            to top,
+            rgba(3,10,20,.65),
+            transparent 55%
         );
-
-    box-shadow:
-        0 22px 40px rgba(0,0,0,.3);
-
-    display:grid;
-
-    place-items:center;
 }
 
-.package-screen-content{
-    text-align:center;
 
+/* package title over image */
+
+.package-label{
+    position:absolute;
+
+    z-index:6;
+
+    bottom:13px;
+
+    right:15px;
+
+    left:15px;
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+}
+
+.package-label strong{
     color:white;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.5);
 }
 
-.package-screen-content strong{
-    display:block;
+.package-label span{
+    padding:5px 8px;
 
-    font-size:18px;
+    border-radius:7px;
+
+    background:
+        rgba(240,199,94,.92);
+
+    color:#172235;
+
+    font-size:8px;
 
     font-weight:900;
 }
 
-.package-screen-content span{
-    display:block;
 
-    color:#72e7bf;
-
-    font-size:9px;
-
-    margin-top:3px;
-}
-
-.package-play{
-    margin-top:8px;
-
-    width:29px;
-    height:29px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--emerald),
-            var(--teal)
-        );
-}
-
-
-/* ================= PRODUCT BODY ================= */
+/* =====================================================
+PRODUCT BODY
+===================================================== */
 
 .product-body{
     padding:20px;
@@ -1075,6 +1177,7 @@ a{
     display:block;
 
     margin-top:16px;
+
     margin-bottom:7px;
 
     color:#475569;
@@ -1109,14 +1212,16 @@ a{
 
 .plan-select:focus{
     border-color:
-        rgba(7,150,105,.45);
+        rgba(200,155,44,.65);
 
     box-shadow:
-        0 0 0 4px rgba(7,150,105,.06);
+        0 0 0 4px rgba(200,155,44,.08);
 }
 
 
-/* ================= PRICE ================= */
+/* =====================================================
+PRICE
+===================================================== */
 
 .price-box{
     display:flex;
@@ -1136,12 +1241,12 @@ a{
     background:
         linear-gradient(
             135deg,
-            #f4fbf8,
-            #f8fbfc
+            #fffaf0,
+            #f8fafc
         );
 
     border:
-        1px solid #dcefe8;
+        1px solid #f0e3bd;
 }
 
 .price-label{
@@ -1157,7 +1262,7 @@ a{
 
     gap:4px;
 
-    color:var(--emerald);
+    color:#a87912;
 }
 
 .price strong{
@@ -1173,7 +1278,9 @@ a{
 }
 
 
-/* ================= LIST ================= */
+/* =====================================================
+LIST
+===================================================== */
 
 .product-features{
     list-style:none;
@@ -1205,9 +1312,9 @@ a{
 
     border-radius:50%;
 
-    background:#e9f9f3;
+    background:#fff5d9;
 
-    color:var(--emerald);
+    color:#a87912;
 
     font-size:9px;
 
@@ -1219,7 +1326,9 @@ a{
 }
 
 
-/* ================= MODALS ================= */
+/* =====================================================
+MODALS
+===================================================== */
 
 .modal{
     position:fixed;
@@ -1231,15 +1340,15 @@ a{
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     padding:18px;
 
     background:
-        rgba(7,17,30,.6);
+        rgba(5,15,30,.68);
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter:blur(8px);
 }
 
 .modal.show{
@@ -1262,15 +1371,17 @@ a{
     border-radius:23px;
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,.28);
+        0 30px 80px rgba(0,0,0,.3);
 
     animation:
         popup .2s ease;
 }
 
 @keyframes popup{
+
     from{
         opacity:0;
+
         transform:
             translateY(20px)
             scale(.98);
@@ -1278,8 +1389,10 @@ a{
 
     to{
         opacity:1;
+
         transform:none;
     }
+
 }
 
 .modal-head{
@@ -1318,10 +1431,10 @@ a{
 
     border-radius:13px;
 
-    background:#effaf6;
+    background:#fffaf0;
 
     border:
-        1px solid #d4f0e6;
+        1px solid #f0e3bd;
 
     margin-bottom:15px;
 }
@@ -1337,7 +1450,7 @@ a{
 .selected strong{
     display:block;
 
-    color:var(--emerald);
+    color:#a87912;
 
     font-size:12px;
 
@@ -1383,10 +1496,10 @@ a{
 .form-group input:focus,
 .form-group select:focus{
     border-color:
-        rgba(7,150,105,.45);
+        rgba(200,155,44,.65);
 
     box-shadow:
-        0 0 0 4px rgba(7,150,105,.06);
+        0 0 0 4px rgba(200,155,44,.08);
 }
 
 .modal-note{
@@ -1402,7 +1515,9 @@ a{
 }
 
 
-/* ================= INFO ================= */
+/* =====================================================
+STEPS
+===================================================== */
 
 .steps{
     display:grid;
@@ -1436,9 +1551,14 @@ a{
 
     border-radius:50%;
 
-    background:#e8f9f3;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
 
-    color:var(--emerald);
+    color:#172235;
 
     font-size:11px;
 
@@ -1452,38 +1572,45 @@ a{
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+FOOTER
+===================================================== */
 
 .footer{
     background:
         linear-gradient(
             135deg,
-            #091524,
-            #132b47
+            #050f1e,
+            #12304f
         );
 
     color:#9eacbd;
 
     padding:
-        32px 20px;
+        35px 20px;
 
     text-align:center;
 
     font-size:10px;
+
+    border-top:
+        1px solid rgba(240,199,94,.15);
 }
 
 .footer strong{
     color:white;
 
-    font-size:17px;
+    font-size:18px;
 }
 
 .footer span{
-    color:#39d6a0;
+    color:var(--gold2);
 }
 
 
-/* ================= TOAST ================= */
+/* =====================================================
+TOAST
+===================================================== */
 
 .toast{
     position:fixed;
@@ -1524,7 +1651,9 @@ a{
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+RESPONSIVE
+===================================================== */
 
 @media(max-width:1050px){
 
@@ -1542,14 +1671,14 @@ a{
         grid-template-columns:
             repeat(2,1fr);
     }
+
 }
 
 
 @media(max-width:750px){
 
     .hero{
-        padding:
-            13px;
+        padding:13px;
     }
 
     .hero-cover{
@@ -1672,6 +1801,7 @@ a{
 
     .hero-text{
         font-size:11px;
+
         line-height:1.9;
     }
 
@@ -1700,7 +1830,7 @@ a{
     }
 
     .package{
-        height:185px;
+        height:205px;
     }
 
     .product-body{
@@ -1718,7 +1848,7 @@ a{
 }
 
 
-/* ================= LARGE SCREENS ================= */
+/* LARGE */
 
 @media(min-width:1400px){
 
@@ -1727,13 +1857,14 @@ a{
     .ad-wrapper,
     .features,
     .store{
-        max-width:1350px;
+        max-width:1400px;
     }
 
     .products{
         grid-template-columns:
             repeat(4,1fr);
     }
+
 }
 
 </style>
@@ -1761,7 +1892,8 @@ fill="none">
 
 <path
 d="M8 5.5L18 12L8 18.5V5.5Z"
-fill="white"></path>
+fill="white">
+</path>
 
 </svg>
 
@@ -1791,7 +1923,7 @@ onclick="scrollToStore()">
 </button>
 
 <button
-class="nav-link yellow "
+class="nav-link dark"
 onclick="openInfo()">
 
 طريقة الطلب
@@ -1807,7 +1939,7 @@ onclick="openInfo()">
 
 
 <!-- =====================================================
-HERO COVER
+HERO
 ===================================================== -->
 
 <section class="hero">
@@ -1872,7 +2004,6 @@ onclick="openInfo()">
 </div>
 
 
-
 <!-- TV -->
 
 <div class="tv-showcase">
@@ -1895,7 +2026,8 @@ fill="none">
 
 <path
 d="M9 5L19 12L9 19V5Z"
-fill="white"></path>
+fill="white">
+</path>
 
 </svg>
 
@@ -1913,24 +2045,18 @@ fill="white"></path>
 </div>
 
 
-
-<!-- الخدمات -->
-
 <div class="service-strip">
 
- 
 <div class="service-mini">
 <strong>MY HD</strong>
 <span>متوفر</span>
 </div>
 
- 
 <div class="service-mini">
 <strong>LYNXE IPTV</strong>
 <span>متوفر</span>
 </div>
 
- 
 <div class="service-mini">
 <strong>Premium</strong>
 <span>متوفر</span>
@@ -1946,7 +2072,7 @@ fill="white"></path>
 
 
 <!-- =====================================================
-ADVERTISEMENT
+AD
 ===================================================== -->
 
 <div class="ad-wrapper">
@@ -1994,9 +2120,7 @@ FEATURES
 <div class="feature">
 
 <div class="feature-icon green">
-
 ✓
-
 </div>
 
 <div>
@@ -2017,9 +2141,7 @@ FEATURES
 <div class="feature">
 
 <div class="feature-icon">
-
 ⚡
-
 </div>
 
 <div>
@@ -2040,9 +2162,7 @@ FEATURES
 <div class="feature">
 
 <div class="feature-icon gold">
-
 ◉
-
 </div>
 
 <div>
@@ -2063,9 +2183,7 @@ FEATURES
 <div class="feature">
 
 <div class="feature-icon green">
-
 ✓
-
 </div>
 
 <div>
@@ -2095,7 +2213,6 @@ STORE
 class="store"
 id="store">
 
-
 <div class="section-head">
 
 <div class="section-title">
@@ -2124,9 +2241,7 @@ oninput="searchProducts()">
 <div
 class="products"
 id="products">
-
 </div>
-
 
 </section>
 
@@ -2168,9 +2283,7 @@ ORDER MODAL
 class="modal"
 id="orderModal">
 
-
 <div class="modal-box">
-
 
 <div class="modal-head">
 
@@ -2196,7 +2309,6 @@ onclick="closeModal()">
 
 <strong
 id="selectedProduct">
-
 -
 </strong>
 
@@ -2276,16 +2388,14 @@ onclick="sendOrder()">
 
 
 <!-- =====================================================
-INFO MODAL
+INFO
 ===================================================== -->
 
 <div
 class="modal"
 id="infoModal">
 
-
 <div class="modal-box">
-
 
 <div class="modal-head">
 
@@ -2305,12 +2415,9 @@ onclick="closeInfo()">
 
 <div class="steps">
 
-
 <div class="step">
 
-<div class="step-number">
-1
-</div>
+<div class="step-number">1</div>
 
 <p>
 اختر الباقة التي تريدها.
@@ -2321,12 +2428,10 @@ onclick="closeInfo()">
 
 <div class="step">
 
-<div class="step-number">
-2
-</div>
+<div class="step-number">2</div>
 
 <p>
-اختر مدة الاشتراك من القائمة.
+اختر مدة الاشتراك.
 </p>
 
 </div>
@@ -2334,12 +2439,10 @@ onclick="closeInfo()">
 
 <div class="step">
 
-<div class="step-number">
-3
-</div>
+<div class="step-number">3</div>
 
 <p>
-السعر يتغير تلقائيًا حسب المدة.
+السعر يتغير تلقائيًا.
 </p>
 
 </div>
@@ -2347,9 +2450,7 @@ onclick="closeInfo()">
 
 <div class="step">
 
-<div class="step-number">
-4
-</div>
+<div class="step-number">4</div>
 
 <p>
 اضغط «اشترك الآن».
@@ -2360,17 +2461,14 @@ onclick="closeInfo()">
 
 <div class="step">
 
-<div class="step-number">
-5
-</div>
+<div class="step-number">5</div>
 
 <p>
-أدخل معلوماتك ثم أرسل الطلب عبر WhatsApp.
+أدخل معلوماتك وأرسل الطلب عبر WhatsApp.
 </p>
 
 </div>
 
-
 </div>
 
 </div>
@@ -2378,8 +2476,6 @@ onclick="closeInfo()">
 </div>
 
 
-
-<!-- TOAST -->
 
 <div
 class="toast"
@@ -2396,30 +2492,42 @@ id="toast">
 
 const STORE = {
 
-    /* رقم WhatsApp بدون 0 */
     whatsapp:"213671995831"
 
 };
 
 
-
 /* =====================================================
 الباقات
-===================================================== */
+=====================================================
+
+لتغيير صورة أي باقة:
+
+غيّر فقط قيمة image
+
+مثال:
+
+image:"https://example.com/myhd.jpg"
+
+*/
 
 const products = [
 
 {
+
     id:1,
 
     name:"MY HD",
 
     description:
-        "اختر المدة المناسبة لك وشاهد السعر مباشرة.",
+        "اشتراك MY HD بمدد مختلفة وأسعار واضحة.",
 
     theme:"green",
 
     featured:true,
+
+    image:
+        "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=85",
 
     plans:[
 
@@ -2449,16 +2557,20 @@ const products = [
 
 
 {
+
     id:2,
 
     name:"LYNXE IPTV",
 
     description:
-        "اشتراك بمدد مختلفة حسب احتياجك.",
+        "اشتراك IPTV بمدد مختلفة حسب احتياجك.",
 
     theme:"teal",
 
     featured:false,
+
+    image:
+        "https://images.unsplash.com/photo-1601944177325-f8867652837f?auto=format&fit=crop&w=900&q=85",
 
     plans:[
 
@@ -2488,16 +2600,20 @@ const products = [
 
 
 {
+
     id:3,
 
     name:"VIREXO PREMIUM",
 
     description:
-        "اختر الباقة والمدة التي تناسبك.",
+        "الباقة المميزة لمحبي المشاهدة والترفيه.",
 
     theme:"navy",
 
     featured:false,
+
+    image:
+        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=85",
 
     plans:[
 
@@ -2527,6 +2643,7 @@ const products = [
 
 
 {
+
     id:4,
 
     name:"PREMIUM MAX",
@@ -2537,6 +2654,9 @@ const products = [
     theme:"gold",
 
     featured:false,
+
+    image:
+        "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=85",
 
     plans:[
 
@@ -2568,7 +2688,6 @@ const products = [
 
 
 let selectedProduct=null;
-
 
 
 /* =====================================================
@@ -2604,12 +2723,11 @@ function renderProducts(list=products){
     }
 
 
-    container.innerHTML =
+    container.innerHTML=
 
     list.map(product=>`
 
     <article class="product">
-
 
         ${
             product.featured
@@ -2624,32 +2742,28 @@ function renderProducts(list=products){
 
         <div class="package ${product.theme}">
 
+            <img
+                class="package-image"
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+                onerror="this.style.display='none'"
+            >
 
-            <div class="package-screen">
-
-                <div
-                class="package-screen-content">
-
-                    <strong>
-                        ${product.name}
-                    </strong>
-
-                    <span>
-                        اشتراك رقمي
-                    </span>
+            <div class="package-overlay"></div>
 
 
-                    <div
-                    class="package-play">
+            <div class="package-label">
 
-                        ▶
+                <strong>
+                    ${product.name}
+                </strong>
 
-                    </div>
-
-                </div>
+                <span>
+                    اشتراك رقمي
+                </span>
 
             </div>
-
 
         </div>
 
@@ -2675,18 +2789,15 @@ function renderProducts(list=products){
             </p>
 
 
-            <label
-            class="select-label">
-
+            <label class="select-label">
                 مدة الاشتراك
-
             </label>
 
 
             <select
-            class="plan-select"
-            id="plan-${product.id}"
-            onchange="updatePrice(${product.id})">
+                class="plan-select"
+                id="plan-${product.id}"
+                onchange="updatePrice(${product.id})">
 
                 ${
                     product.plans.map(
@@ -2718,7 +2829,7 @@ function renderProducts(list=products){
                 <div class="price">
 
                     <strong
-                    id="price-${product.id}">
+                        id="price-${product.id}">
 
                         ${formatPrice(
                             product.plans[0].price
@@ -2756,8 +2867,8 @@ function renderProducts(list=products){
 
 
             <button
-            class="btn btn-main"
-            onclick="openOrder(${product.id})">
+                class="btn btn-main"
+                onclick="openOrder(${product.id})">
 
                 📺 اشترك الآن
 
@@ -2771,7 +2882,6 @@ function renderProducts(list=products){
     `).join("");
 
 }
-
 
 
 /* =====================================================
@@ -2806,7 +2916,6 @@ function updatePrice(id){
         formatPrice(plan.price);
 
 }
-
 
 
 /* =====================================================
@@ -2862,7 +2971,6 @@ function openOrder(id){
 }
 
 
-
 /* =====================================================
 إغلاق الطلب
 ===================================================== */
@@ -2874,7 +2982,6 @@ function closeModal(){
     ).classList.remove("show");
 
 }
-
 
 
 /* =====================================================
@@ -2935,8 +3042,6 @@ function sendOrder(){
 
 `📺 طلب اشتراك جديد
 
-━━━━━━━━━━━━━━
-
 الخدمة:
 ${selectedProduct.name}
 
@@ -2945,8 +3050,6 @@ ${selectedProduct.duration}
 
 السعر:
 ${formatPrice(selectedProduct.price)} دج
-
-━━━━━━━━━━━━━━
 
 اسم الزبون:
 ${name}
@@ -2957,10 +3060,7 @@ ${phone}
 طريقة التواصل:
 ${method}
 
-━━━━━━━━━━━━━━
-
 أرغب في إتمام الطلب.`;
-
 
 
     const url=
@@ -2984,7 +3084,6 @@ ${method}
 }
 
 
-
 /* =====================================================
 البحث
 ===================================================== */
@@ -3002,18 +3101,15 @@ function searchProducts(){
     const filtered=
         products.filter(
             product=>
-
                 product.name
                 .toLowerCase()
                 .includes(value)
-
         );
 
 
     renderProducts(filtered);
 
 }
-
 
 
 /* =====================================================
@@ -3031,9 +3127,8 @@ function scrollToStore(){
 }
 
 
-
 /* =====================================================
-Info
+INFO
 ===================================================== */
 
 function openInfo(){
@@ -3054,9 +3149,8 @@ function closeInfo(){
 }
 
 
-
 /* =====================================================
-Toast
+TOAST
 ===================================================== */
 
 function showToast(message){
@@ -3068,7 +3162,6 @@ function showToast(message){
 
 
     toast.textContent=message;
-
 
     toast.classList.add("show");
 
@@ -3083,9 +3176,8 @@ function showToast(message){
 }
 
 
-
 /* =====================================================
-تنسيق السعر
+PRICE
 ===================================================== */
 
 function formatPrice(price){
@@ -3096,9 +3188,8 @@ function formatPrice(price){
 }
 
 
-
 /* =====================================================
-إغلاق بالنقر خارج النافذة
+إغلاق النوافذ
 ===================================================== */
 
 document.addEventListener(
@@ -3129,9 +3220,8 @@ document.addEventListener(
 );
 
 
-
 /* =====================================================
-السنة
+YEAR
 ===================================================== */
 
 document.getElementById(
@@ -3140,9 +3230,8 @@ document.getElementById(
     new Date().getFullYear();
 
 
-
 /* =====================================================
-تشغيل
+START
 ===================================================== */
 
 renderProducts();
@@ -3150,4 +3239,4 @@ renderProducts();
 </script>
 
 </body>
-    </html>
+</html>
